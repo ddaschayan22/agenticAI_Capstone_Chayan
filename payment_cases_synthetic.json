@@ -1,0 +1,177 @@
+[
+  {
+    "case_id": "SYN-FAI-001",
+    "text": "Card payment failed for transaction TX1001 with error insufficient funds.",
+    "label": "failed_payment"
+  },
+  {
+    "case_id": "SYN-FAI-002",
+    "text": "UPI payment declined for TX1002; customer says the payment did not go through.",
+    "label": "failed_payment"
+  },
+  {
+    "case_id": "SYN-FAI-003",
+    "text": "ACH debit failed for TX1003 because the bank account could not be verified.",
+    "label": "failed_payment"
+  },
+  {
+    "case_id": "SYN-FAI-004",
+    "text": "Payment gateway returned a failure for card transaction TX1004.",
+    "label": "failed_payment"
+  },
+  {
+    "case_id": "SYN-FAI-005",
+    "text": "Wire transfer failed for TX1005 with bank rejection message.",
+    "label": "failed_payment"
+  },
+  {
+    "case_id": "SYN-DUP-001",
+    "text": "Customer reports two card debits for transaction TX2001 for $50.",
+    "label": "duplicate_debit"
+  },
+  {
+    "case_id": "SYN-DUP-002",
+    "text": "UPI payment appears duplicated; two debits show for reference TX2002.",
+    "label": "duplicate_debit"
+  },
+  {
+    "case_id": "SYN-DUP-003",
+    "text": "The same ACH payment was charged twice under TX2003.",
+    "label": "duplicate_debit"
+  },
+  {
+    "case_id": "SYN-DUP-004",
+    "text": "Merchant sees duplicate card capture for order TX2004.",
+    "label": "duplicate_debit"
+  },
+  {
+    "case_id": "SYN-DUP-005",
+    "text": "Customer reports repeated debit for wire reference TX2005.",
+    "label": "duplicate_debit"
+  },
+  {
+    "case_id": "SYN-REF-001",
+    "text": "Customer requests a refund for card transaction TX3001.",
+    "label": "refund_request"
+  },
+  {
+    "case_id": "SYN-REF-002",
+    "text": "Please investigate my UPI refund request for reference TX3002.",
+    "label": "refund_request"
+  },
+  {
+    "case_id": "SYN-REF-003",
+    "text": "Merchant asks for a refund on ACH payment TX3003.",
+    "label": "refund_request"
+  },
+  {
+    "case_id": "SYN-REF-004",
+    "text": "I want to request a refund for wire transfer TX3004.",
+    "label": "refund_request"
+  },
+  {
+    "case_id": "SYN-REF-005",
+    "text": "Customer wants payment reversed for card reference TX3005.",
+    "label": "refund_request"
+  },
+  {
+    "case_id": "SYN-CHA-001",
+    "text": "Chargeback notification received for card transaction TX4001.",
+    "label": "chargeback"
+  },
+  {
+    "case_id": "SYN-CHA-002",
+    "text": "The cardholder filed a chargeback for payment TX4002.",
+    "label": "chargeback"
+  },
+  {
+    "case_id": "SYN-CHA-003",
+    "text": "Merchant received a chargeback case with reason unauthorized transaction TX4003.",
+    "label": "chargeback"
+  },
+  {
+    "case_id": "SYN-CHA-004",
+    "text": "Chargeback deadline requires evidence for TX4004.",
+    "label": "chargeback"
+  },
+  {
+    "case_id": "SYN-CHA-005",
+    "text": "Network chargeback alert received for card payment TX4005.",
+    "label": "chargeback"
+  },
+  {
+    "case_id": "SYN-PAY-001",
+    "text": "Customer disputes a card payment TX5001 and requests investigation.",
+    "label": "payment_dispute"
+  },
+  {
+    "case_id": "SYN-PAY-002",
+    "text": "UPI transaction TX5002 is disputed by the customer.",
+    "label": "payment_dispute"
+  },
+  {
+    "case_id": "SYN-PAY-003",
+    "text": "Merchant and customer disagree about payment TX5003.",
+    "label": "payment_dispute"
+  },
+  {
+    "case_id": "SYN-PAY-004",
+    "text": "Please review the payment dispute for ACH transaction TX5004.",
+    "label": "payment_dispute"
+  },
+  {
+    "case_id": "SYN-PAY-005",
+    "text": "Customer says the wire payment TX5005 is not recognized and disputes it.",
+    "label": "payment_dispute"
+  },
+  {
+    "case_id": "SYN-SET-001",
+    "text": "Settlement amount does not match the ledger for merchant TX6001.",
+    "label": "settlement_mismatch"
+  },
+  {
+    "case_id": "SYN-SET-002",
+    "text": "Merchant settlement is missing for UPI batch TX6002.",
+    "label": "settlement_mismatch"
+  },
+  {
+    "case_id": "SYN-SET-003",
+    "text": "ACH settlement total differs from expected amount TX6003.",
+    "label": "settlement_mismatch"
+  },
+  {
+    "case_id": "SYN-SET-004",
+    "text": "Wire settlement reconciliation shows a mismatch for TX6004.",
+    "label": "settlement_mismatch"
+  },
+  {
+    "case_id": "SYN-SET-005",
+    "text": "Card settlement transaction TX6005 is missing from the report.",
+    "label": "settlement_mismatch"
+  },
+  {
+    "case_id": "SYN-OTH-001",
+    "text": "Payment message cannot be interpreted for transaction TX7001.",
+    "label": "other_exception"
+  },
+  {
+    "case_id": "SYN-OTH-002",
+    "text": "Merchant account has a policy-sensitive payment exception TX7002.",
+    "label": "other_exception"
+  },
+  {
+    "case_id": "SYN-OTH-003",
+    "text": "Operations received an unclear issue with reference TX7003.",
+    "label": "other_exception"
+  },
+  {
+    "case_id": "SYN-OTH-004",
+    "text": "Payment status is ambiguous and needs human review TX7004.",
+    "label": "other_exception"
+  },
+  {
+    "case_id": "SYN-OTH-005",
+    "text": "High-risk payment exception was reported for TX7005.",
+    "label": "other_exception"
+  }
+]
