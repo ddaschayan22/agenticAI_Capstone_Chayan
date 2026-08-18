@@ -77,7 +77,10 @@ def generate_response(email: str, api_key: str, model: str) -> dict[str, str]:
         "timelines, actions taken, promises, customer information, or product information. "
         "If information is missing, acknowledge that and politely request what is needed. "
         "Return only valid JSON with exactly these string fields: summary and reply. "
-        "The summary must be concise. The reply must be professional, polite, empathetic, "
+        "The summary must be medium length: write 2 to 4 complete sentences that "
+        "capture the sender, main request or issue, important supporting details, "
+        "and any missing information without repeating the entire email. The reply "
+        "must be professional, polite, empathetic, "
         "and helpful."
     )
     payload = {
