@@ -1,0 +1,52 @@
+Payments Exception, Dispute &amp; Chargeback Resolution Agent
+Build an agentic payments operations solution that monitors failed payments, duplicate debits,
+chargebacks, refund requests, and settlement mismatches across card, UPI, ACH, wire, and merchant
+systems. The agent should classify the issue, gather supporting evidence, recommend the correct
+resolution path, draft customer or merchant communication, and route high-risk or policy-sensitive cases
+to operations teams. Bonus: predict dispute likelihood and suggest preventive controls for recurring
+failure patterns.
+Objective: Reduce payment operations effort and improve resolution speed for exceptions, disputes, and
+chargebacks.
+Learning takeaways: Payment message interpretation, exception classification, dispute lifecycle automation,
+evidence retrieval, policy-based decisioning, SLA prioritization, and responsible escalation design.
+
+
+Write me a complete runnable python code that show difference between Stemming vs. Lemmatization
+
+Please take these words:
+
+1.payment
+2.exception
+3.transaction
+4. prediction
+5. operation
+6. banking
+7. withdrawal
+8. priority
+9. resolution
+10.classification
+11.communication
+12. idempotency
+13. duplicate
+14. resolution
+15. faliure  
+
+please write a code in such a way that no exra setup is required.
+
+Also show the difference in tabular format with emphasis on the largest and smallest difference between stemming and lemmilization
+
+
+do not write code 
+
+
+PROBLEM 2: Stop-Words Trap
+
+Write 5 sentences from your domain that have "not", "never", "very", or "but". Run sentiment analysis with stop-words. Run without stop-words. Which sentences flip meaning?
+
+
+
+
+
+
+
+
