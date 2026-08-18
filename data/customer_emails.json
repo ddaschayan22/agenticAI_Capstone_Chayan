@@ -1,0 +1,26 @@
+[
+  {
+    "original_email": "Dear Chayan,  Please do your payment on time. We have a optional penalty for defaulters. Thanks, Payment Team",
+    "summary": "Customer reminded about timely payment to avoid penalties.",
+    "generated_reply": "Dear Customer,\n\nThank you for your email. We appreciate your reminder regarding the timely payment. If you have any questions or need assistance with the payment process, please feel free to reach out. We are here to help.\n\nBest regards,\nChayan",
+    "timestamp": "2026-08-18T12:39:57.415738+00:00"
+  },
+  {
+    "original_email": "Dear Chayan,  Please do your payment on time. We have a optional penalty for defaulters. Thanks, Payment Team",
+    "summary": "Customer reminded about timely payment and optional penalty for defaulters.",
+    "generated_reply": "Dear Customer,\n\nThank you for your reminder regarding the payment. I appreciate your communication and will ensure that the payment is made on time to avoid any penalties. If you have any further questions or need assistance, please feel free to reach out.\n\nBest regards,\nChayan",
+    "timestamp": "2026-08-18T12:40:09.634500+00:00"
+  },
+  {
+    "original_email": "Dear Chayan,  Please do your payment on time. We have a optional penalty for defaulters. Thanks, Payment Team",
+    "summary": "The Payment Team asks Chayan to make a payment on time and warns that a penalty may apply to defaulters.",
+    "generated_reply": "Thank you for sharing this message. It appears to be a payment reminder, but it does not include the amount, due date, or account details. Please let us know what assistance you need and provide the relevant payment reference or account information so we can help clarify it.",
+    "timestamp": "2026-08-18T12:41:03.338414+00:00"
+  },
+  {
+    "original_email": "Dear Chayan,  Please do your payment on time. We have a optional penalty for defaulters. Thanks, Payment Team",
+    "summary": "The email asks Chayan to make a payment on time and mentions an optional penalty for defaulters, but provides no payment details or context.",
+    "generated_reply": "Hello, thank you for your message. Could you please provide the payment details, including the amount, due date, and reference or account information? Also, please clarify what is meant by an “optional penalty” for defaulters. Once we have this information, we can better assist you.",
+    "timestamp": "2026-08-18T12:47:18.358674+00:00"
+  }
+]
