@@ -1,1 +1,171 @@
-Dear Chayan,  Please do your payment on time. We have a optional penalty for defaulters. Thanks, Payment Team
+Payment Terms and Conditions Template: A Complete Guide
+Use this payment terms and conditions template guide to set due dates, late fees, and refund rules that protect cash flow and keep your business covered.
+
+TermsBox Team
+|
+July 25, 2026
+14 min read
+A payment terms and conditions template gives your business a ready-made structure for the clauses that decide when you get paid, how much, and what happens when a customer pays late or not at all. Without clear payment terms, you are relying on goodwill to collect money, and goodwill is not enforceable. This guide walks through every clause a solid payment terms and conditions template needs, with sample wording, real legal references, and adjustments for different business models. It is educational content rather than legal advice, so consult a qualified attorney for terms tailored to your specific situation.
+
+What Is a Payment Terms and Conditions Template?
+A payment terms and conditions template is a pre-structured set of contract clauses that defines how, when, and under what conditions customers must pay for your products or services. It covers accepted payment methods, due dates, late payment consequences, refunds, and dispute handling in language you can adapt to your business.
+
+Payment terms usually live in one of three places:
+
+Inside your general terms and conditions: the most common approach for websites, SaaS products, and e-commerce stores. Customers accept payment terms along with everything else at signup or checkout.
+As a standalone payment terms document: common in B2B services where terms are negotiated per client and attached to proposals or master service agreements.
+On quotes and invoices: a summary of the agreed terms, such as "Net 30, 2% monthly interest on overdue balances." The invoice references terms; it should not be the first place a customer sees them.
+That last point matters legally. Terms are binding when the customer accepts them before or at the time of the transaction. A late fee that first appears on an invoice, after the work is done, is very difficult to enforce because the customer never agreed to it.
+
+Why Your Business Needs Clear Payment Terms
+Unpaid and late invoices are a cash flow problem before they are a legal problem. Research from payment platforms and trade bodies consistently finds that a large share of small business invoices are paid late, and businesses without written late payment terms wait longest.
+
+Clear payment terms and conditions deliver four concrete benefits:
+
+Faster payment: invoices that state a specific due date and a late fee are paid measurably faster than invoices marked "due upon receipt" with no consequences.
+Enforceable remedies: you can only charge interest, recover collection costs, or suspend service if your terms granted you those rights upfront.
+Fewer disputes and chargebacks: when refund rules, billing cycles, and renewal dates are documented and accepted, customers have less ground to dispute charges with their card issuer.
+Professional signaling: clients treat businesses with formal terms as businesses, not favors. That alone changes payment behavior.
+For subscription businesses there is a fifth reason: card networks and regulators require clear disclosure of recurring billing. The US Federal Trade Commission (FTC) enforces the Restore Online Shoppers' Confidence Act (ROSCA), which requires clear disclosure of recurring charges, express informed consent, and a simple cancellation mechanism before billing a customer on a recurring basis.
+
+What to Include in a Payment Terms and Conditions Template
+Every effective payment terms and conditions template covers the same core clauses. Use this list as your drafting checklist:
+
+Prices and currency: what the customer pays, in which currency, and whether prices include or exclude VAT, GST, or sales tax.
+Accepted payment methods: cards, bank transfer, direct debit, PayPal, or invoice. State any methods you refuse, such as checks.
+Due date: the exact point payment is due, for example "Net 30 from invoice date" or "at checkout before delivery."
+Deposits and milestone payments: for services, how much is due upfront and what triggers each subsequent payment.
+Late payment consequences: interest rate, fixed late fees, recovery costs, and your right to pause work or suspend access.
+Recurring billing terms: billing frequency, renewal dates, price change notice, and how to cancel, if you sell subscriptions.
+Failed payment handling: retry attempts, grace periods, and when an account is suspended or a contract terminated.
+Refunds and cancellations: when customers get money back, in what form, and within what timeframe.
+Chargebacks and disputes: the process customers must follow before disputing a charge, and your right to recover chargeback fees caused by invalid disputes.
+Taxes: who is responsible for applicable taxes, duties, and withholding.
+Governing law: which country's or state's law applies to payment disputes.
+If you sell physical goods, your refund clause should align with your return and refund policy rather than duplicate it. Cross-reference the two documents so they never contradict each other.
+
+Common Payment Terms Explained
+Payment terms have standard shorthand that appears on invoices worldwide. Choose one deliberately rather than defaulting to what your invoicing tool suggests.
+
+Term	Meaning	Best For
+Due on receipt	Payment expected immediately upon invoice delivery	Small one-off jobs, first-time clients
+Net 7 / Net 14	Full payment due 7 or 14 days after invoice date	Freelancers, small agencies
+Net 30	Full payment due 30 days after invoice date	Standard B2B invoicing
+Net 60 / Net 90	Payment due 60 or 90 days after invoice date	Large enterprise clients (avoid if you can)
+2/10 Net 30	2% discount if paid within 10 days, otherwise full amount in 30	Encouraging early payment
+50% upfront	Half due before work starts, half on completion	Projects and custom work
+EOM	Due at the end of the month of the invoice date	Clients with monthly payment runs
+Two practical notes on choosing terms. First, shorter terms get paid faster: moving from Net 30 to Net 14 rarely costs you clients and meaningfully improves cash flow for a small business. Second, in the EU, Directive 2011/7/EU on combating late payment caps standard B2B payment periods at 60 days unless both parties expressly agree otherwise and the extension is not grossly unfair to the creditor. Public authorities must generally pay within 30 days.
+
+Late Payment Clauses: What You Can Legally Charge
+The late payment clause is where a payment terms and conditions template earns its keep. What you can charge depends on where you and your customers are.
+
+European Union
+The Late Payment Directive (2011/7/EU) gives creditors in B2B transactions statutory rights that apply even without a contract clause:
+
+Statutory interest of at least 8 percentage points above the European Central Bank reference rate.
+A fixed recovery fee of 40 EUR per late invoice, plus reasonable compensation for recovery costs beyond that amount.
+Interest runs automatically from the day after the due date. No reminder is legally required, though sending one remains good practice.
+United Kingdom
+The Late Payment of Commercial Debts (Interest) Act 1998 grants statutory interest of 8% plus the Bank of England base rate on late B2B payments, plus fixed compensation of 40, 70, or 100 GBP per invoice depending on the debt size.
+
+United States
+There is no federal statutory late payment interest for private B2B invoices. Instead:
+
+State usury laws cap the interest you may charge, and caps vary significantly by state. A common safe commercial practice is 1% to 1.5% per month (12% to 18% annually), but verify the cap in your governing law state.
+The clause must appear in terms the customer accepted before the transaction. Interest announced for the first time on an overdue notice is generally unenforceable.
+Beyond Interest
+Effective late payment clauses combine money with leverage. Alongside interest, reserve the right to pause ongoing work, suspend account access, withhold deliverables, and refer the debt to collections with costs charged to the customer. For service businesses, the right to stop work is often more motivating than any interest rate.
+
+Payment Terms for Different Business Models
+A payment terms template is a starting point, not a finished document. Adjust these areas based on how you actually sell.
+
+Freelancers and Agencies
+Prioritize deposits and kill fees. Require 30% to 50% upfront before work begins, tie remaining payments to milestones rather than dates, and state that final deliverables (source files, admin access, licenses) transfer only after full payment. Include a cancellation clause that keeps the deposit and bills for work completed if the client walks away mid-project.
+
+E-commerce Stores
+Payment happens at checkout, so due dates matter less than refunds, chargebacks, and pricing errors. State that orders are charged at checkout, define when refunds are issued and to which payment method, and include a pricing error clause allowing you to cancel and refund orders placed at an obviously wrong price. An e-commerce store selling to EU consumers must also honor the 14-day withdrawal right under the Consumer Rights Directive (2011/83/EU) for most goods.
+
+SaaS and Subscriptions
+Recurring billing needs the most detailed terms. Cover the billing cycle and renewal date, automatic renewal and how to cancel before it, proration rules for upgrades and downgrades, the notice period for price increases, and the dunning process for failed payments (for example, three retry attempts over 14 days, then suspension). Under ROSCA in the US and similar EU consumer rules, cancellation must be at least as easy as signup.
+
+B2B Services with Invoicing
+Negotiated terms need a hierarchy clause: state that your standard payment terms apply unless a signed agreement says otherwise, and that the signed agreement wins in a conflict. Add a purchase order clause confirming that terms printed on a client's PO do not override yours unless you accept them in writing. This prevents the "battle of the forms" from silently rewriting your payment rights.
+
+How to Write Payment Terms and Conditions Step by Step
+Follow this sequence to go from blank page to enforceable terms:
+
+Map your money flows. List every way customers pay you: one-time checkout, recurring subscription, invoiced projects, deposits. Each flow needs its own rules.
+Set your due dates and late remedies. Pick specific terms (Net 14, 50% upfront) and a late interest rate that complies with the usury or statutory rules of your governing law.
+Write the refund and cancellation rules. Decide what is refundable, within what window, and in what form, and check them against mandatory consumer rights in your target markets.
+Add subscription and failed payment clauses if you bill on a recurring basis, including renewal notices and an easy cancellation path.
+Choose governing law and dispute resolution. Pick the jurisdiction where you could realistically pursue a claim, and state whether disputes go to court, arbitration, or mediation.
+Put the terms where customers accept them. Link them at checkout with an affirmative checkbox, attach them to quotes, and reference them on every invoice.
+Have the draft reviewed. A generator or template gets the structure right; a lawyer confirms the specifics hold up under your governing law.
+TermsBox generates and hosts editable legal-document drafts. Subscribers can receive scan-derived change prompts, but an operator must review the facts, legal applicability, and published text.
+
+Sample Payment Terms and Conditions Template Clauses
+Use these clauses as structural examples. Replace the bracketed values and adapt the wording to your business before using them.
+
+Payment and due dates:
+
+Terms & Conditions Generator
+
+Generate professional terms and conditions. Create yours in minutes with TermsBox.
+
+Generate Now
+All invoices are payable within [14] days of the invoice date, without deduction or set-off, in [USD/EUR] by [bank transfer or card payment]. Where the agreement specifies a deposit, work commences only after the deposit is received.
+
+Late payment:
+
+Overdue amounts accrue interest at [1.5]% per month, or the maximum rate permitted by applicable law, from the due date until paid in full. We may additionally suspend services and withhold deliverables while any amount remains overdue, and recover reasonable costs of collection, including collection agency and legal fees.
+
+Recurring billing:
+
+Subscription fees are billed in advance on a [monthly/annual] basis and renew automatically at the end of each billing period unless cancelled before the renewal date. We will notify you at least [30] days before any price change takes effect. You may cancel at any time from your account settings, with cancellation effective at the end of the current billing period.
+
+Failed payments:
+
+If a recurring payment fails, we will retry the charge up to [3] times over [14] days and notify you at the email address on file. If payment cannot be collected, we may suspend or downgrade your account until the outstanding balance is settled.
+
+Chargebacks:
+
+You agree to contact us to resolve any billing issue before initiating a chargeback. If a chargeback is raised for a charge made in accordance with these terms, we may recover the disputed amount and any chargeback fees imposed on us, and suspend your account pending resolution.
+
+Keep every number in brackets consistent with what your checkout, invoices, and marketing pages actually say. Courts and card networks both treat contradictions between your terms and your practice as evidence against you.
+
+Common Payment Terms Mistakes to Avoid
+Even businesses with written terms lose collection disputes over avoidable drafting errors:
+
+Introducing terms after the sale. Late fees, interest, and no-refund rules that first appear on an invoice or a shipped receipt were never agreed to and rarely hold up.
+Copying terms from another jurisdiction. A US template with 18% annual interest may violate usury caps elsewhere, and a B2B template ignores mandatory consumer withdrawal rights when you sell to individuals in the EU or UK.
+Vague due dates. "Payment due promptly" is not enforceable. "Payment due within 14 days of the invoice date" is.
+No acceptance mechanism. Terms buried in a footer that customers never affirmatively accept are weaker than terms behind a checked box at checkout. Use a clear "I agree to the Terms and Conditions" step.
+Contradicting your other documents. If your terms say no refunds but your refund policy offers 30 days, the customer-friendly version usually wins. Keep payment terms, refund policy, and checkout copy aligned.
+Never updating the terms. Prices, processors, and laws change. Terms that still reference a payment method you dropped two years ago undermine the credibility of every other clause.
+A quarterly review takes 15 minutes and prevents most of these problems. If your legal pages are hosted with TermsBox, updating the source document updates the published URL immediately, so invoices and checkout links never point at a stale version.
+
+Frequently Asked Questions
+Are payment terms and conditions legally binding?
+
+Yes, payment terms are legally binding when the customer accepts them before the transaction, for example by signing a contract, checking an agreement box at checkout, or approving a quote that references them. Terms added after the sale, such as on the invoice alone, are much harder to enforce.
+
+What is the difference between Net 30 and due on receipt?
+
+Net 30 means the full invoice amount is due 30 days after the invoice date, while due on receipt means payment is expected as soon as the customer receives the invoice, typically within one business day. Net 30 is standard for B2B invoicing, and due on receipt suits small one-off jobs.
+
+Can I charge late fees on overdue invoices?
+
+Yes, in most jurisdictions you can charge late payment interest or fees if your payment terms state them upfront. In the EU, Directive 2011/7/EU grants at least 8 percentage points above the ECB reference rate plus a 40 EUR recovery fee for B2B debts, while US state usury laws cap allowable interest rates.
+
+Do I need payment terms if I use a payment processor like Stripe or PayPal?
+
+Yes. A payment processor only handles the transaction mechanics, not your commercial relationship with the customer. You still need written terms covering pricing, refunds, chargebacks, subscription renewals, and what happens if a payment fails, because the processor's rules do not protect you in a dispute.
+
+Should payment terms be a separate document or part of my terms and conditions?
+
+For most businesses, payment terms work best as a dedicated section inside your general terms and conditions, so customers accept everything in one step. A separate payment terms document makes sense for B2B companies that negotiate terms per client or attach them to quotes and contracts.
+
+How often should I update my payment terms and conditions?
+
+Review your payment terms at least once a year and whenever you change prices, add payment methods, switch processors, or expand into new countries. Notify existing customers of material changes before they take effect, since courts may not enforce terms a customer never had a chance to see.

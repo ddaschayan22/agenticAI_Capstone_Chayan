@@ -1,0 +1,211 @@
+id,text,payment_method,issue_type,priority,merchant_or_customer
+CASE-0001,card payment failed for customer transaction PO010001; gateway returned insufficient funds.,card,failed_payment,medium,customer
+CASE-0002,upi payment was declined for merchant; operations must verify bank rejection.,upi,failed_payment,medium,merchant
+CASE-0003,Payment attempt on ach did not complete for operations team because of timeout.,ach,failed_payment,medium,operations team
+CASE-0004,account holder reports a failed wire payment; reference PO010004 needs status review.,wire,failed_payment,medium,account holder
+CASE-0005,merchant payment failed for customer transaction PO010005; gateway returned processor error.,merchant,failed_payment,medium,customer
+CASE-0006,card payment was declined for merchant; operations must verify insufficient funds.,card,failed_payment,medium,merchant
+CASE-0007,Payment attempt on upi did not complete for operations team because of bank rejection.,upi,failed_payment,medium,operations team
+CASE-0008,account holder reports a failed ach payment; reference PO010008 needs status review.,ach,failed_payment,medium,account holder
+CASE-0009,wire payment failed for customer transaction PO010009; gateway returned invalid account information.,wire,failed_payment,medium,customer
+CASE-0010,merchant payment was declined for merchant; operations must verify processor error.,merchant,failed_payment,medium,merchant
+CASE-0011,Payment attempt on card did not complete for operations team because of insufficient funds.,card,failed_payment,medium,operations team
+CASE-0012,account holder reports a failed upi payment; reference PO010012 needs status review.,upi,failed_payment,medium,account holder
+CASE-0013,ach payment failed for customer transaction PO010013; gateway returned timeout.,ach,failed_payment,medium,customer
+CASE-0014,wire payment was declined for merchant; operations must verify invalid account information.,wire,failed_payment,medium,merchant
+CASE-0015,Payment attempt on merchant did not complete for operations team because of processor error.,merchant,failed_payment,medium,operations team
+CASE-0016,account holder reports a failed card payment; reference PO010016 needs status review.,card,failed_payment,medium,account holder
+CASE-0017,upi payment failed for customer transaction PO010017; gateway returned bank rejection.,upi,failed_payment,medium,customer
+CASE-0018,ach payment was declined for merchant; operations must verify timeout.,ach,failed_payment,medium,merchant
+CASE-0019,Payment attempt on wire did not complete for operations team because of invalid account information.,wire,failed_payment,medium,operations team
+CASE-0020,account holder reports a failed merchant payment; reference PO010020 needs status review.,merchant,failed_payment,medium,account holder
+CASE-0021,card payment failed for customer transaction PO010021; gateway returned insufficient funds.,card,failed_payment,medium,customer
+CASE-0022,upi payment was declined for merchant; operations must verify bank rejection.,upi,failed_payment,medium,merchant
+CASE-0023,Payment attempt on ach did not complete for operations team because of timeout.,ach,failed_payment,medium,operations team
+CASE-0024,account holder reports a failed wire payment; reference PO010024 needs status review.,wire,failed_payment,medium,account holder
+CASE-0025,merchant payment failed for customer transaction PO010025; gateway returned processor error.,merchant,failed_payment,medium,customer
+CASE-0026,card payment was declined for merchant; operations must verify insufficient funds.,card,failed_payment,medium,merchant
+CASE-0027,Payment attempt on upi did not complete for operations team because of bank rejection.,upi,failed_payment,medium,operations team
+CASE-0028,account holder reports a failed ach payment; reference PO010028 needs status review.,ach,failed_payment,medium,account holder
+CASE-0029,wire payment failed for customer transaction PO010029; gateway returned invalid account information.,wire,failed_payment,medium,customer
+CASE-0030,merchant payment was declined for merchant; operations must verify processor error.,merchant,failed_payment,medium,merchant
+CASE-0031,merchant reports two upi debits for transaction PO020001.,upi,duplicate_debit,medium,merchant
+CASE-0032,Duplicate ach charge appears in the ledger for operations team reference PO020002.,ach,duplicate_debit,medium,operations team
+CASE-0033,The same wire payment was captured twice; reconcile authorization PO020003.,wire,duplicate_debit,medium,account holder
+CASE-0034,Repeated debit detected on merchant; verify reversal eligibility for customer.,merchant,duplicate_debit,medium,customer
+CASE-0035,merchant reports two card debits for transaction PO020005.,card,duplicate_debit,medium,merchant
+CASE-0036,Duplicate upi charge appears in the ledger for operations team reference PO020006.,upi,duplicate_debit,medium,operations team
+CASE-0037,The same ach payment was captured twice; reconcile authorization PO020007.,ach,duplicate_debit,medium,account holder
+CASE-0038,Repeated debit detected on wire; verify reversal eligibility for customer.,wire,duplicate_debit,medium,customer
+CASE-0039,merchant reports two merchant debits for transaction PO020009.,merchant,duplicate_debit,medium,merchant
+CASE-0040,Duplicate card charge appears in the ledger for operations team reference PO020010.,card,duplicate_debit,medium,operations team
+CASE-0041,The same upi payment was captured twice; reconcile authorization PO020011.,upi,duplicate_debit,medium,account holder
+CASE-0042,Repeated debit detected on ach; verify reversal eligibility for customer.,ach,duplicate_debit,medium,customer
+CASE-0043,merchant reports two wire debits for transaction PO020013.,wire,duplicate_debit,medium,merchant
+CASE-0044,Duplicate merchant charge appears in the ledger for operations team reference PO020014.,merchant,duplicate_debit,medium,operations team
+CASE-0045,The same card payment was captured twice; reconcile authorization PO020015.,card,duplicate_debit,medium,account holder
+CASE-0046,Repeated debit detected on upi; verify reversal eligibility for customer.,upi,duplicate_debit,medium,customer
+CASE-0047,merchant reports two ach debits for transaction PO020017.,ach,duplicate_debit,medium,merchant
+CASE-0048,Duplicate wire charge appears in the ledger for operations team reference PO020018.,wire,duplicate_debit,medium,operations team
+CASE-0049,The same merchant payment was captured twice; reconcile authorization PO020019.,merchant,duplicate_debit,medium,account holder
+CASE-0050,Repeated debit detected on card; verify reversal eligibility for customer.,card,duplicate_debit,medium,customer
+CASE-0051,merchant reports two upi debits for transaction PO020021.,upi,duplicate_debit,medium,merchant
+CASE-0052,Duplicate ach charge appears in the ledger for operations team reference PO020022.,ach,duplicate_debit,medium,operations team
+CASE-0053,The same wire payment was captured twice; reconcile authorization PO020023.,wire,duplicate_debit,medium,account holder
+CASE-0054,Repeated debit detected on merchant; verify reversal eligibility for customer.,merchant,duplicate_debit,medium,customer
+CASE-0055,merchant reports two card debits for transaction PO020025.,card,duplicate_debit,medium,merchant
+CASE-0056,Duplicate upi charge appears in the ledger for operations team reference PO020026.,upi,duplicate_debit,medium,operations team
+CASE-0057,The same ach payment was captured twice; reconcile authorization PO020027.,ach,duplicate_debit,medium,account holder
+CASE-0058,Repeated debit detected on wire; verify reversal eligibility for customer.,wire,duplicate_debit,medium,customer
+CASE-0059,merchant reports two merchant debits for transaction PO020029.,merchant,duplicate_debit,medium,merchant
+CASE-0060,Duplicate card charge appears in the ledger for operations team reference PO020030.,card,duplicate_debit,medium,operations team
+CASE-0061,operations team requested a refund for the ach payment PO030001.,ach,refund_request,medium,operations team
+CASE-0062,Refund request received for wire transaction PO030002; verify eligibility.,wire,refund_request,medium,account holder
+CASE-0063,Customer asks to reverse a merchant payment after the original transaction.,merchant,refund_request,medium,customer
+CASE-0064,Merchant submitted a refund case for card; authorization and status are required.,card,refund_request,medium,merchant
+CASE-0065,operations team requested a refund for the upi payment PO030005.,upi,refund_request,medium,operations team
+CASE-0066,Refund request received for ach transaction PO030006; verify eligibility.,ach,refund_request,medium,account holder
+CASE-0067,Customer asks to reverse a wire payment after the original transaction.,wire,refund_request,medium,customer
+CASE-0068,Merchant submitted a refund case for merchant; authorization and status are required.,merchant,refund_request,medium,merchant
+CASE-0069,operations team requested a refund for the card payment PO030009.,card,refund_request,medium,operations team
+CASE-0070,Refund request received for upi transaction PO030010; verify eligibility.,upi,refund_request,medium,account holder
+CASE-0071,Customer asks to reverse a ach payment after the original transaction.,ach,refund_request,medium,customer
+CASE-0072,Merchant submitted a refund case for wire; authorization and status are required.,wire,refund_request,medium,merchant
+CASE-0073,operations team requested a refund for the merchant payment PO030013.,merchant,refund_request,medium,operations team
+CASE-0074,Refund request received for card transaction PO030014; verify eligibility.,card,refund_request,medium,account holder
+CASE-0075,Customer asks to reverse a upi payment after the original transaction.,upi,refund_request,medium,customer
+CASE-0076,Merchant submitted a refund case for ach; authorization and status are required.,ach,refund_request,medium,merchant
+CASE-0077,operations team requested a refund for the wire payment PO030017.,wire,refund_request,medium,operations team
+CASE-0078,Refund request received for merchant transaction PO030018; verify eligibility.,merchant,refund_request,medium,account holder
+CASE-0079,Customer asks to reverse a card payment after the original transaction.,card,refund_request,medium,customer
+CASE-0080,Merchant submitted a refund case for upi; authorization and status are required.,upi,refund_request,medium,merchant
+CASE-0081,operations team requested a refund for the ach payment PO030021.,ach,refund_request,medium,operations team
+CASE-0082,Refund request received for wire transaction PO030022; verify eligibility.,wire,refund_request,medium,account holder
+CASE-0083,Customer asks to reverse a merchant payment after the original transaction.,merchant,refund_request,medium,customer
+CASE-0084,Merchant submitted a refund case for card; authorization and status are required.,card,refund_request,medium,merchant
+CASE-0085,operations team requested a refund for the upi payment PO030025.,upi,refund_request,medium,operations team
+CASE-0086,Refund request received for ach transaction PO030026; verify eligibility.,ach,refund_request,medium,account holder
+CASE-0087,Customer asks to reverse a wire payment after the original transaction.,wire,refund_request,medium,customer
+CASE-0088,Merchant submitted a refund case for merchant; authorization and status are required.,merchant,refund_request,medium,merchant
+CASE-0089,operations team requested a refund for the card payment PO030029.,card,refund_request,medium,operations team
+CASE-0090,Refund request received for upi transaction PO030030; verify eligibility.,upi,refund_request,medium,account holder
+CASE-0091,Chargeback notification received for wire transaction PO040001; evidence is required.,wire,chargeback,high,account holder
+CASE-0092,Card network opened a chargeback case for customer; review reason and deadline.,merchant,chargeback,high,customer
+CASE-0093,Chargeback response package needs transaction evidence for reference PO040003.,card,chargeback,high,merchant
+CASE-0094,Unauthorized payment chargeback reported on upi; route to disputes team.,upi,chargeback,high,operations team
+CASE-0095,Chargeback notification received for ach transaction PO040005; evidence is required.,ach,chargeback,high,account holder
+CASE-0096,Card network opened a chargeback case for customer; review reason and deadline.,wire,chargeback,high,customer
+CASE-0097,Chargeback response package needs transaction evidence for reference PO040007.,merchant,chargeback,high,merchant
+CASE-0098,Unauthorized payment chargeback reported on card; route to disputes team.,card,chargeback,high,operations team
+CASE-0099,Chargeback notification received for upi transaction PO040009; evidence is required.,upi,chargeback,high,account holder
+CASE-0100,Card network opened a chargeback case for customer; review reason and deadline.,ach,chargeback,high,customer
+CASE-0101,Chargeback response package needs transaction evidence for reference PO040011.,wire,chargeback,high,merchant
+CASE-0102,Unauthorized payment chargeback reported on merchant; route to disputes team.,merchant,chargeback,high,operations team
+CASE-0103,Chargeback notification received for card transaction PO040013; evidence is required.,card,chargeback,high,account holder
+CASE-0104,Card network opened a chargeback case for customer; review reason and deadline.,upi,chargeback,high,customer
+CASE-0105,Chargeback response package needs transaction evidence for reference PO040015.,ach,chargeback,high,merchant
+CASE-0106,Unauthorized payment chargeback reported on wire; route to disputes team.,wire,chargeback,high,operations team
+CASE-0107,Chargeback notification received for merchant transaction PO040017; evidence is required.,merchant,chargeback,high,account holder
+CASE-0108,Card network opened a chargeback case for customer; review reason and deadline.,card,chargeback,high,customer
+CASE-0109,Chargeback response package needs transaction evidence for reference PO040019.,upi,chargeback,high,merchant
+CASE-0110,Unauthorized payment chargeback reported on ach; route to disputes team.,ach,chargeback,high,operations team
+CASE-0111,Chargeback notification received for wire transaction PO040021; evidence is required.,wire,chargeback,high,account holder
+CASE-0112,Card network opened a chargeback case for customer; review reason and deadline.,merchant,chargeback,high,customer
+CASE-0113,Chargeback response package needs transaction evidence for reference PO040023.,card,chargeback,high,merchant
+CASE-0114,Unauthorized payment chargeback reported on upi; route to disputes team.,upi,chargeback,high,operations team
+CASE-0115,Chargeback notification received for ach transaction PO040025; evidence is required.,ach,chargeback,high,account holder
+CASE-0116,Card network opened a chargeback case for customer; review reason and deadline.,wire,chargeback,high,customer
+CASE-0117,Chargeback response package needs transaction evidence for reference PO040027.,merchant,chargeback,high,merchant
+CASE-0118,Unauthorized payment chargeback reported on card; route to disputes team.,card,chargeback,high,operations team
+CASE-0119,Chargeback notification received for upi transaction PO040029; evidence is required.,upi,chargeback,high,account holder
+CASE-0120,Card network opened a chargeback case for customer; review reason and deadline.,ach,chargeback,high,customer
+CASE-0121,customer disputes the merchant payment PO050001; investigate the transaction record.,merchant,payment_dispute,medium,customer
+CASE-0122,Payment dispute opened for card; collect customer reason and supporting evidence.,card,payment_dispute,medium,merchant
+CASE-0123,Customer says the upi transaction is not recognized; dispute review is needed.,upi,payment_dispute,medium,operations team
+CASE-0124,Merchant and customer disagree about ach payment PO050004; preserve case history.,ach,payment_dispute,medium,account holder
+CASE-0125,customer disputes the wire payment PO050005; investigate the transaction record.,wire,payment_dispute,medium,customer
+CASE-0126,Payment dispute opened for merchant; collect customer reason and supporting evidence.,merchant,payment_dispute,medium,merchant
+CASE-0127,Customer says the card transaction is not recognized; dispute review is needed.,card,payment_dispute,medium,operations team
+CASE-0128,Merchant and customer disagree about upi payment PO050008; preserve case history.,upi,payment_dispute,medium,account holder
+CASE-0129,customer disputes the ach payment PO050009; investigate the transaction record.,ach,payment_dispute,medium,customer
+CASE-0130,Payment dispute opened for wire; collect customer reason and supporting evidence.,wire,payment_dispute,medium,merchant
+CASE-0131,Customer says the merchant transaction is not recognized; dispute review is needed.,merchant,payment_dispute,medium,operations team
+CASE-0132,Merchant and customer disagree about card payment PO050012; preserve case history.,card,payment_dispute,medium,account holder
+CASE-0133,customer disputes the upi payment PO050013; investigate the transaction record.,upi,payment_dispute,medium,customer
+CASE-0134,Payment dispute opened for ach; collect customer reason and supporting evidence.,ach,payment_dispute,medium,merchant
+CASE-0135,Customer says the wire transaction is not recognized; dispute review is needed.,wire,payment_dispute,medium,operations team
+CASE-0136,Merchant and customer disagree about merchant payment PO050016; preserve case history.,merchant,payment_dispute,medium,account holder
+CASE-0137,customer disputes the card payment PO050017; investigate the transaction record.,card,payment_dispute,medium,customer
+CASE-0138,Payment dispute opened for upi; collect customer reason and supporting evidence.,upi,payment_dispute,medium,merchant
+CASE-0139,Customer says the ach transaction is not recognized; dispute review is needed.,ach,payment_dispute,medium,operations team
+CASE-0140,Merchant and customer disagree about wire payment PO050020; preserve case history.,wire,payment_dispute,medium,account holder
+CASE-0141,customer disputes the merchant payment PO050021; investigate the transaction record.,merchant,payment_dispute,medium,customer
+CASE-0142,Payment dispute opened for card; collect customer reason and supporting evidence.,card,payment_dispute,medium,merchant
+CASE-0143,Customer says the upi transaction is not recognized; dispute review is needed.,upi,payment_dispute,medium,operations team
+CASE-0144,Merchant and customer disagree about ach payment PO050024; preserve case history.,ach,payment_dispute,medium,account holder
+CASE-0145,customer disputes the wire payment PO050025; investigate the transaction record.,wire,payment_dispute,medium,customer
+CASE-0146,Payment dispute opened for merchant; collect customer reason and supporting evidence.,merchant,payment_dispute,medium,merchant
+CASE-0147,Customer says the card transaction is not recognized; dispute review is needed.,card,payment_dispute,medium,operations team
+CASE-0148,Merchant and customer disagree about upi payment PO050028; preserve case history.,upi,payment_dispute,medium,account holder
+CASE-0149,customer disputes the ach payment PO050029; investigate the transaction record.,ach,payment_dispute,medium,customer
+CASE-0150,Payment dispute opened for wire; collect customer reason and supporting evidence.,wire,payment_dispute,medium,merchant
+CASE-0151,Merchant settlement for card does not match the expected payout PO060001.,card,settlement_mismatch,high,merchant
+CASE-0152,Settlement reconciliation found a missing upi transaction in the ledger.,upi,settlement_mismatch,high,operations team
+CASE-0153,Processor settlement total differs from expected amount; investigate batch PO060003.,ach,settlement_mismatch,high,account holder
+CASE-0154,Merchant payout mismatch requires comparing settlement file with internal records.,wire,settlement_mismatch,high,customer
+CASE-0155,Merchant settlement for merchant does not match the expected payout PO060005.,merchant,settlement_mismatch,high,merchant
+CASE-0156,Settlement reconciliation found a missing card transaction in the ledger.,card,settlement_mismatch,high,operations team
+CASE-0157,Processor settlement total differs from expected amount; investigate batch PO060007.,upi,settlement_mismatch,high,account holder
+CASE-0158,Merchant payout mismatch requires comparing settlement file with internal records.,ach,settlement_mismatch,high,customer
+CASE-0159,Merchant settlement for wire does not match the expected payout PO060009.,wire,settlement_mismatch,high,merchant
+CASE-0160,Settlement reconciliation found a missing merchant transaction in the ledger.,merchant,settlement_mismatch,high,operations team
+CASE-0161,Processor settlement total differs from expected amount; investigate batch PO060011.,card,settlement_mismatch,high,account holder
+CASE-0162,Merchant payout mismatch requires comparing settlement file with internal records.,upi,settlement_mismatch,high,customer
+CASE-0163,Merchant settlement for ach does not match the expected payout PO060013.,ach,settlement_mismatch,high,merchant
+CASE-0164,Settlement reconciliation found a missing wire transaction in the ledger.,wire,settlement_mismatch,high,operations team
+CASE-0165,Processor settlement total differs from expected amount; investigate batch PO060015.,merchant,settlement_mismatch,high,account holder
+CASE-0166,Merchant payout mismatch requires comparing settlement file with internal records.,card,settlement_mismatch,high,customer
+CASE-0167,Merchant settlement for upi does not match the expected payout PO060017.,upi,settlement_mismatch,high,merchant
+CASE-0168,Settlement reconciliation found a missing ach transaction in the ledger.,ach,settlement_mismatch,high,operations team
+CASE-0169,Processor settlement total differs from expected amount; investigate batch PO060019.,wire,settlement_mismatch,high,account holder
+CASE-0170,Merchant payout mismatch requires comparing settlement file with internal records.,merchant,settlement_mismatch,high,customer
+CASE-0171,Merchant settlement for card does not match the expected payout PO060021.,card,settlement_mismatch,high,merchant
+CASE-0172,Settlement reconciliation found a missing upi transaction in the ledger.,upi,settlement_mismatch,high,operations team
+CASE-0173,Processor settlement total differs from expected amount; investigate batch PO060023.,ach,settlement_mismatch,high,account holder
+CASE-0174,Merchant payout mismatch requires comparing settlement file with internal records.,wire,settlement_mismatch,high,customer
+CASE-0175,Merchant settlement for merchant does not match the expected payout PO060025.,merchant,settlement_mismatch,high,merchant
+CASE-0176,Settlement reconciliation found a missing card transaction in the ledger.,card,settlement_mismatch,high,operations team
+CASE-0177,Processor settlement total differs from expected amount; investigate batch PO060027.,upi,settlement_mismatch,high,account holder
+CASE-0178,Merchant payout mismatch requires comparing settlement file with internal records.,ach,settlement_mismatch,high,customer
+CASE-0179,Merchant settlement for wire does not match the expected payout PO060029.,wire,settlement_mismatch,high,merchant
+CASE-0180,Settlement reconciliation found a missing merchant transaction in the ledger.,merchant,settlement_mismatch,high,operations team
+CASE-0181,upi transfer is pending beyond the expected processing window for operations team.,upi,transfer_exception,medium,operations team
+CASE-0182,ach transfer returned because bank account information requires verification.,ach,transfer_exception,medium,account holder
+CASE-0183,"Wire or ACH exception requires bank response, beneficiary details, and operations review.",wire,transfer_exception,medium,customer
+CASE-0184,Payment rail exception is unresolved for reference PO070004; escalate if compliance risk appears.,merchant,transfer_exception,medium,merchant
+CASE-0185,card transfer is pending beyond the expected processing window for operations team.,card,transfer_exception,medium,operations team
+CASE-0186,upi transfer returned because bank account information requires verification.,upi,transfer_exception,medium,account holder
+CASE-0187,"Wire or ACH exception requires bank response, beneficiary details, and operations review.",ach,transfer_exception,medium,customer
+CASE-0188,Payment rail exception is unresolved for reference PO070008; escalate if compliance risk appears.,wire,transfer_exception,medium,merchant
+CASE-0189,merchant transfer is pending beyond the expected processing window for operations team.,merchant,transfer_exception,medium,operations team
+CASE-0190,card transfer returned because bank account information requires verification.,card,transfer_exception,medium,account holder
+CASE-0191,"Wire or ACH exception requires bank response, beneficiary details, and operations review.",upi,transfer_exception,medium,customer
+CASE-0192,Payment rail exception is unresolved for reference PO070012; escalate if compliance risk appears.,ach,transfer_exception,medium,merchant
+CASE-0193,wire transfer is pending beyond the expected processing window for operations team.,wire,transfer_exception,medium,operations team
+CASE-0194,merchant transfer returned because bank account information requires verification.,merchant,transfer_exception,medium,account holder
+CASE-0195,"Wire or ACH exception requires bank response, beneficiary details, and operations review.",card,transfer_exception,medium,customer
+CASE-0196,Payment rail exception is unresolved for reference PO070016; escalate if compliance risk appears.,upi,transfer_exception,medium,merchant
+CASE-0197,ach transfer is pending beyond the expected processing window for operations team.,ach,transfer_exception,medium,operations team
+CASE-0198,wire transfer returned because bank account information requires verification.,wire,transfer_exception,medium,account holder
+CASE-0199,"Wire or ACH exception requires bank response, beneficiary details, and operations review.",merchant,transfer_exception,medium,customer
+CASE-0200,Payment rail exception is unresolved for reference PO070020; escalate if compliance risk appears.,card,transfer_exception,medium,merchant
+CASE-0201,upi transfer is pending beyond the expected processing window for operations team.,upi,transfer_exception,medium,operations team
+CASE-0202,ach transfer returned because bank account information requires verification.,ach,transfer_exception,medium,account holder
+CASE-0203,"Wire or ACH exception requires bank response, beneficiary details, and operations review.",wire,transfer_exception,medium,customer
+CASE-0204,Payment rail exception is unresolved for reference PO070024; escalate if compliance risk appears.,merchant,transfer_exception,medium,merchant
+CASE-0205,card transfer is pending beyond the expected processing window for operations team.,card,transfer_exception,medium,operations team
+CASE-0206,upi transfer returned because bank account information requires verification.,upi,transfer_exception,medium,account holder
+CASE-0207,"Wire or ACH exception requires bank response, beneficiary details, and operations review.",ach,transfer_exception,medium,customer
+CASE-0208,Payment rail exception is unresolved for reference PO070028; escalate if compliance risk appears.,wire,transfer_exception,medium,merchant
+CASE-0209,merchant transfer is pending beyond the expected processing window for operations team.,merchant,transfer_exception,medium,operations team
+CASE-0210,card transfer returned because bank account information requires verification.,card,transfer_exception,medium,account holder

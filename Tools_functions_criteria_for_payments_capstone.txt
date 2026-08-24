@@ -1,0 +1,57 @@
+Goals:
+
+Build payment autonomous operations agent that continuously monitors payment process across various payment methods like UPI, card, ach, wire and merchant systems.
+
+Payment process should be error free. Predict dispute earlier and take preventive measures.
+
+Check failed payments, duplicate debits, chargebacks, refund requests, and settlement mismatches and create mechanisms to solve it proactively.
+
+Reduce payment operations effort and improve resolution speed for exceptions, disputes, and chargebacks.
+
+We must implement Payment message interpretation, exception classification, dispute lifecycle automation,
+evidence retrieval, policy-based decisioning, SLA prioritization, and responsible escalation design.
+
+Draft a email for the customer or merchant communication, and route high-risk or policy-sensitive cases to operation teams.
+
+
+
+
+
+
+
+
+
+
+
+Success criteria:
+
+Continuous monitoring should be able to detect errors via payment methods such as  UPI, card, ach, wire and merchant systems ahead and device a mechanism to prevent it.
+
+Successfully detecting failed payments, duplicate debits, chargebacks, refund requests, and settlement mismatches and create mechanisms to solve it proactively.
+
+Fast resolution of exceptions, disputes, and chargebacks.
+
+Should be able to do Payment message interpretation, exception classification, dispute lifecycle automation,
+evidence retrieval, policy-based decisioning, SLA prioritization, and responsible escalation design.
+
+Should successfully draft mail for the customer or merchant communication, and route high-risk or policy-sensitive cases to operation teams.
+
+
+Execution by humans:
+
+X human will create the payment autonomous operations agent that continuously monitors payment process
+Y human will Check for failed payments
+Z human will work on the resolution of issues
+A human will draft a mail for customer
+B human will raise sensitive, high-risk issue to operation team
+C human will work on improving the system
+
+
+
+
+Goal, success criteria, step by step workflow, agent,
+
+output in graphical diagram mode
+
+open router api as llm model
+
