@@ -1,0 +1,8 @@
+Ticket ID: TICKET-015
+Status: Resolved
+
+Customer:
+I need help with a refund request for a duplicate payment.
+
+Resolution:
+The original payment was reviewed, the duplicated posting was confirmed, and the refund request was processed.

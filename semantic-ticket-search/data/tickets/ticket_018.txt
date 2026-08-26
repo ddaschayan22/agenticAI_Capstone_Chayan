@@ -1,0 +1,8 @@
+Ticket ID: TICKET-018
+Status: Resolved
+
+Customer:
+The refund amount is different from the amount shown on the original receipt.
+
+Resolution:
+The refund and payment records were reconciled and the difference was explained to the customer.

@@ -1,0 +1,8 @@
+Ticket ID: TICKET-004
+Status: Resolved
+
+Customer:
+I was charged twice for one purchase.
+
+Resolution:
+The duplicate transaction was verified and a refund was issued for the extra charge.

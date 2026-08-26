@@ -1,0 +1,62 @@
+Command for semantic ticket search:
+
+Set-Location "C:\Users\user\Documents\Agentic_AI_training\Session2\semantic-ticket-search"
+& "C:\Users\user\Documents\Agentic_AI_training\Session2\.venv\Scripts\python.exe" run.py index --limit 20
+
+& "C:\Users\user\Documents\Agentic_AI_training\Session2\.venv\Scripts\python.exe" run.py search "app keeps logging me out"
+
+
+............................................................................................................................................................................................................................................
+
+(.venv) PS C:\Users\user\Documents\Agentic_AI_training\Session2\semantic-ticket-search> 
+                                                                                        Set-Location "C:\Users\user\Documents\Agentic_AI_training\Session2\semantic-ticket-search"
+(.venv) PS C:\Users\user\Documents\Agentic_AI_training\Session2\semantic-ticket-search> & "C:\Users\user\Documents\Agentic_AI_training\Session2\.venv\Scripts\python.exe" run.py index --limit 20
+Loading tickets...
+Tickets found: 20
+Ticket limit: 20
+Tickets loaded: 20
+Chunks created: 60
+Chunks indexed/upserted: 60
+
+Indexing completed successfully.
+
+(.venv) PS C:\Users\user\Documents\Agentic_AI_training\Session2\semantic-ticket-search> & "C:\Users\user\Documents\Agentic_AI_training\Session2\.venv\Scripts\python.exe" run.py search "app keeps logging me out"
+
+Query:
+app keeps logging me out
+
+Top semantic matches:
+
+1. TICKET-016
+   Similarity: 0.1796
+   Distance: 0.8204
+   Status: resolved
+   Source: ticket_016.txt
+
+   Customer: The sign-in page keeps returning me to login after I open the dashboard.
+
+2. TICKET-042
+   Similarity: 0.1161
+   Distance: 0.8839
+   Status: resolved
+   Source: ticket_001.txt
+
+   Customer: My session expires randomly every few minutes and the application keeps asking me to sign in.
+
+3. TICKET-011
+   Similarity: 0.1041
+   Distance: 0.8959
+   Status: resolved
+   Source: ticket_011.txt
+
+   Resolution: The UPI reference was checked against the provider response and the account posting was reconciled.
+
+4. TICKET-017
+   Similarity: 0.0925
+   Distance: 0.9075
+   Status: resolved
+   Source: ticket_017.txt
+
+   Ticket ID: TICKET-017 Status: Resolved
+(.venv) PS C:\Users\user\Documents\Agentic_AI_training\Session2\semantic-ticket-search> 
+

@@ -1,0 +1,8 @@
+Ticket ID: TICKET-007
+Status: Resolved
+
+Customer:
+The website says my payment failed, but I received a debit notification.
+
+Resolution:
+The payment event and account posting were reconciled, and the final transaction status was communicated.

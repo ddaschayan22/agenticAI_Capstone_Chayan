@@ -1,0 +1,8 @@
+Ticket ID: TICKET-011
+Status: Resolved
+
+Customer:
+The UPI payment was declined but the amount appears to have left my account.
+
+Resolution:
+The UPI reference was checked against the provider response and the account posting was reconciled.

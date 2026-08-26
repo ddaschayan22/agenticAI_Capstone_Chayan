@@ -1,0 +1,8 @@
+Ticket ID: TICKET-010
+Status: Resolved
+
+Customer:
+The merchant says the payout amount does not match the sales total.
+
+Resolution:
+The settlement report was compared with the ledger and a reconciliation adjustment was recorded.

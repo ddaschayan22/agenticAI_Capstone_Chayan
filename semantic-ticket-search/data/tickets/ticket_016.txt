@@ -1,0 +1,8 @@
+Ticket ID: TICKET-016
+Status: Resolved
+
+Customer:
+The sign-in page keeps returning me to login after I open the dashboard.
+
+Resolution:
+The identity provider session settings were corrected and the login flow was tested.

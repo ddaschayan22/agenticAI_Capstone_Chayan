@@ -1,0 +1,8 @@
+Ticket ID: TICKET-020
+Status: Resolved
+
+Customer:
+I was charged twice after retrying the checkout payment.
+
+Resolution:
+The two payment attempts were matched, the duplicate debit was confirmed, and a refund was issued.

@@ -1,0 +1,8 @@
+Ticket ID: TICKET-008
+Status: Resolved
+
+Customer:
+A chargeback was opened for a card purchase that I do not recognize.
+
+Resolution:
+The dispute case was registered and the required transaction evidence was collected for review.

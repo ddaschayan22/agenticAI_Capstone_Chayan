@@ -1,0 +1,8 @@
+Ticket ID: TICKET-019
+Status: Resolved
+
+Customer:
+The merchant reported a missing payout in the settlement file.
+
+Resolution:
+The settlement batch and merchant ledger were reconciled and the missing transaction was identified.
