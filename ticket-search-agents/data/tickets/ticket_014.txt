@@ -1,0 +1,8 @@
+Ticket ID: TICKET-014
+Status: Resolved
+
+Customer:
+The merchant has not received settlement for yesterday's card transactions.
+
+Resolution:
+The settlement batch was checked and the missing payout record was sent for reconciliation.

@@ -1,0 +1,8 @@
+Ticket ID: TICKET-013
+Status: Resolved
+
+Customer:
+My wire transfer was rejected by the receiving bank.
+
+Resolution:
+The bank response was reviewed and the beneficiary information was corrected before a new transfer request.

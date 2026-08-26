@@ -1,0 +1,8 @@
+Ticket ID: TICKET-118
+Status: Resolved
+
+Customer:
+The mobile application repeatedly asks me to sign in after a short period.
+
+Resolution:
+The authentication cache was cleared and the mobile application was updated.

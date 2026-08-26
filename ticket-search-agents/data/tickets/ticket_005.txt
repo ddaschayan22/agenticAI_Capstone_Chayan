@@ -1,0 +1,8 @@
+Ticket ID: TICKET-005
+Status: Resolved
+
+Customer:
+My bank transfer is still waiting and the recipient has not received the money.
+
+Resolution:
+The transfer was held for bank processing and completed after the banking status was refreshed.

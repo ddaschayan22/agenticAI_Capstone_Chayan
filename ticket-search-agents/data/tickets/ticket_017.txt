@@ -1,0 +1,8 @@
+Ticket ID: TICKET-017
+Status: Resolved
+
+Customer:
+The card payment was approved in the bank app but the order was not completed.
+
+Resolution:
+The authorization and merchant order records were compared and the payment status was updated.

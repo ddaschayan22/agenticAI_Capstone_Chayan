@@ -1,0 +1,8 @@
+Ticket ID: TICKET-012
+Status: Resolved
+
+Customer:
+The ACH debit returned because my account information was not accepted.
+
+Resolution:
+The bank return code was reviewed and the customer was asked to verify the account details.

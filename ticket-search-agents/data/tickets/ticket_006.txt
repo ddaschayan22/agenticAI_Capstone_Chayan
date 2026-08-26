@@ -1,0 +1,8 @@
+Ticket ID: TICKET-006
+Status: Resolved
+
+Customer:
+The refund for my returned order has not appeared.
+
+Resolution:
+The refund request was located and its processing status was confirmed with the payment provider.

@@ -1,0 +1,7 @@
+__pycache__/
+*.py[cod]
+data/*.log
+data/tasks.json
+data/test.log
+data/task_execution_details.jsonl
+data/chroma_db/

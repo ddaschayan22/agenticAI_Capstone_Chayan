@@ -1,0 +1,8 @@
+Ticket ID: TICKET-003
+Status: Resolved
+
+Customer:
+I cannot complete checkout because my card payment is rejected.
+
+Resolution:
+The payment processor had temporarily declined transactions. The customer completed the purchase after the processor recovered.
