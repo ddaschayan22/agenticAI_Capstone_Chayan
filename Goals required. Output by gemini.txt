@@ -1,0 +1,812 @@
+Goals required. Output by gemini
+
+# Goal 1: Build a single agentic payments operations solution
+
+## Task 1.1: Ingest and normalize payment operations events
+
+**Tools required:**
+
+### Payment processor, bank, and payment-rail APIs
+
+**Tool description:** Connects to card, UPI, ACH, wire, bank, and processor systems to retrieve payment statuses, responses, authorization details, refunds, disputes, and settlement information, and execute authorized payment actions.
+
+**Parameters:**
+
+```json
+{
+  "transaction_ids": ["TXN-10001"],
+  "authorization_references": ["AUTH-45678"],
+  "payment_rail": "UPI",
+  "date_range": {
+    "start": "2026-08-24T00:00:00Z",
+    "end": "2026-08-24T23:59:59Z"
+  },
+  "amount": 2500.00,
+  "merchant_id": "MER-1001",
+  "dispute_id": null,
+  "refund_id": null,
+  "action_request": null
+}
+```
+
+### Transaction ledger and payment-event datastore
+
+**Tool description:** Provides the authoritative internal financial and event history for payment attempts, postings, reversals, refunds, and adjustments.
+
+**Parameters:**
+
+```json
+{
+  "transaction_ids": ["TXN-10001"],
+  "account_ids": ["ACC-10001"],
+  "merchant_ids": ["MER-1001"],
+  "event_types": ["PAYMENT_ATTEMPT", "AUTHORIZATION", "CAPTURE"],
+  "amount": 2500.00,
+  "currency": "INR",
+  "date_range": {
+    "start": "2026-08-24T00:00:00Z",
+    "end": "2026-08-24T23:59:59Z"
+  }
+}
+```
+
+**Outcome:**
+
+```json
+{
+  "result": "success",
+  "events_ingested": 1250,
+  "payment_rails": ["CARD", "UPI", "ACH", "WIRE"],
+  "normalized_events": 1242,
+  "normalization_errors": 8,
+  "common_case_fields": [
+    "transaction_id",
+    "payment_rail",
+    "amount",
+    "currency",
+    "status",
+    "event_type",
+    "timestamp"
+  ]
+}
+```
+
+---
+
+## Task 1.2: Detect and group exceptions
+
+**Tools required:**
+
+### Transaction ledger and payment-event datastore
+
+**Tool description:** Provides the authoritative internal financial and event history for payment attempts, postings, reversals, refunds, and adjustments.
+
+**Parameters:**
+
+```json
+{
+  "transaction_ids": ["TXN-10001", "TXN-10002"],
+  "account_ids": ["ACC-10001"],
+  "merchant_ids": ["MER-1001"],
+  "event_types": ["PAYMENT_FAILED", "DUPLICATE_POSTING"],
+  "amount": 2500.00,
+  "currency": "INR",
+  "date_range": {
+    "start": "2026-08-24T00:00:00Z",
+    "end": "2026-08-24T23:59:59Z"
+  }
+}
+```
+
+### Case-management and workflow system
+
+**Tool description:** Creates, assigns, prioritizes, updates, escalates, and closes operational cases while managing tasks, approvals, owners, and workflow status.
+
+**Parameters:**
+
+```json
+{
+  "case_summary": "Duplicate payment notification detected for TXN-10001",
+  "classification": {
+    "issue_type": "DUPLICATE_DEBIT"
+  },
+  "evidence_links": [],
+  "recommendation": {},
+  "priority": "HIGH",
+  "sla": {},
+  "queue": null,
+  "owner": null,
+  "approval_state": "NOT_REQUIRED",
+  "communication_drafts": []
+}
+```
+
+**Outcome:**
+
+```json
+{
+  "result": "success",
+  "cases_created": 37,
+  "duplicate_events_removed": 112,
+  "grouped_cases": 29,
+  "case_types": {
+    "FAILED_PAYMENT": 12,
+    "DUPLICATE_DEBIT": 8,
+    "REFUND_REQUEST": 5,
+    "CHARGEBACK": 3,
+    "SETTLEMENT_MISMATCH": 1
+  }
+}
+```
+
+---
+
+# Goal 2: Interpret payment messages and classify operational issues
+
+## Task 2.1: Interpret payment and processor messages
+
+**Tools required:**
+
+### Payment processor, bank, and payment-rail APIs
+
+**Tool description:** Connects to card, UPI, ACH, wire, bank, and processor systems to retrieve payment statuses, responses, authorization details, refunds, disputes, and settlement information, and execute authorized payment actions.
+
+**Parameters:**
+
+```json
+{
+  "transaction_ids": ["TXN-10001"],
+  "authorization_references": ["AUTH-45678"],
+  "payment_rail": "CARD",
+  "date_range": {
+    "start": "2026-08-24T00:00:00Z",
+    "end": "2026-08-24T23:59:59Z"
+  },
+  "amount": 2500.00,
+  "merchant_id": "MER-1001",
+  "dispute_id": null,
+  "refund_id": null,
+  "action_request": null
+}
+```
+
+### Analytics and machine-learning service
+
+**Tool description:** Analyzes recurring exception patterns and optionally estimates dispute likelihood and control effectiveness.
+
+**Parameters:**
+
+```json
+{
+  "historical_case_outcomes": [],
+  "transaction_features": [
+    "payment_rail",
+    "amount",
+    "response_code",
+    "retry_count"
+  ],
+  "processor_responses": [
+    "05 - Do Not Honor"
+  ],
+  "merchant_attributes": {
+    "merchant_id": "MER-1001"
+  },
+  "customer_impact": {
+    "payment_failed": true
+  },
+  "evidence_features": {},
+  "preventive_control_outcomes": []
+}
+```
+
+**Outcome:**
+
+```json
+{
+  "result": "success",
+  "response_code": "05",
+  "interpreted_reason": "DO_NOT_HONOR",
+  "failure_category": "FINAL_DECLINE",
+  "confidence": 0.97,
+  "recommended_next_step": "DO_NOT_RETRY_UNLESS_POLICY_ALLOWS"
+}
+```
+
+---
+
+## Task 2.2: Classify the operational issue
+
+**Tools required:**
+
+### Policy and rules engine
+
+**Tool description:** Evaluates payment, refund, dispute, risk, compliance, approval, SLA, and escalation policies deterministically.
+
+**Parameters:**
+
+```json
+{
+  "case_classification": {
+    "payment_rail": "CARD",
+    "response_code": "05"
+  },
+  "payment_rail": "CARD",
+  "amount": 2500.00,
+  "currency": "INR",
+  "reason_code": "05",
+  "risk_signals": {},
+  "customer_or_merchant_segment": "STANDARD",
+  "evidence_state": {
+    "payment_response_available": true
+  },
+  "deadlines": {},
+  "policy_version": "PAYMENT-POLICY-V3"
+}
+```
+
+### Transaction ledger and payment-event datastore
+
+**Tool description:** Provides the authoritative internal financial and event history for payment attempts, postings, reversals, refunds, and adjustments.
+
+**Parameters:**
+
+```json
+{
+  "transaction_ids": ["TXN-10001"],
+  "account_ids": [],
+  "merchant_ids": ["MER-1001"],
+  "event_types": ["PAYMENT_ATTEMPT", "PAYMENT_FAILED"],
+  "amount": 2500.00,
+  "currency": "INR",
+  "date_range": {
+    "start": "2026-08-24T00:00:00Z",
+    "end": "2026-08-24T23:59:59Z"
+  }
+}
+```
+
+**Outcome:**
+
+```json
+{
+  "result": "success",
+  "classification": {
+    "payment_rail": "CARD",
+    "issue_type": "FAILED_PAYMENT",
+    "lifecycle_stage": "FAILED",
+    "severity": "MEDIUM",
+    "financial_amount": 2500.00,
+    "customer_impact": "PAYMENT_NOT_COMPLETED",
+    "evidence_status": "COMPLETE",
+    "confidence": 0.97
+  }
+}
+```
+
+---
+
+# Goal 3: Automatically gather and link supporting evidence
+
+## Task 3.1: Correlate records across systems
+
+**Tools required:**
+
+### Merchant-system and payment-orchestration integrations
+
+**Tool description:** Connects to merchant and payment-orchestration platforms to retrieve order, fulfillment, invoicing, customer, payment-intent, retry, idempotency, and merchant configuration information.
+
+**Parameters:**
+
+```json
+{
+  "merchant_id": "MER-1001",
+  "order_id": "ORD-50001",
+  "payment_intent_id": "PI-90001",
+  "customer_reference": "CUST-1001",
+  "transaction_id": "TXN-10001",
+  "date_range": {
+    "start": "2026-08-24T00:00:00Z",
+    "end": "2026-08-24T23:59:59Z"
+  }
+}
+```
+
+### Transaction ledger and payment-event datastore
+
+**Tool description:** Provides the authoritative internal financial and event history for payment attempts, postings, reversals, refunds, and adjustments.
+
+**Parameters:**
+
+```json
+{
+  "transaction_ids": ["TXN-10001"],
+  "account_ids": ["ACC-10001"],
+  "merchant_ids": ["MER-1001"],
+  "event_types": [],
+  "amount": 2500.00,
+  "currency": "INR",
+  "date_range": {
+    "start": "2026-08-24T00:00:00Z",
+    "end": "2026-08-24T23:59:59Z"
+  }
+}
+```
+
+**Outcome:**
+
+```json
+{
+  "result": "success",
+  "correlation": {
+    "transaction_id": "TXN-10001",
+    "payment_intent_id": "PI-90001",
+    "order_id": "ORD-50001",
+    "merchant_id": "MER-1001",
+    "customer_reference": "CUST-1001"
+  },
+  "correlated_records": 14,
+  "correlation_confidence": 0.99
+}
+```
+
+---
+
+## Task 3.2: Retrieve and assemble supporting evidence
+
+**Tools required:**
+
+### Evidence and document retrieval store
+
+**Tool description:** Stores and retrieves structured records, messages, files, receipts, delivery evidence, processor payloads, and prior case communications with provenance and version information.
+
+**Parameters:**
+
+```json
+{
+  "case_id": "CASE-10001",
+  "transaction_references": ["TXN-10001"],
+  "document_type": "PAYMENT_EVIDENCE",
+  "customer_or_merchant_identifiers": ["CUST-1001", "MER-1001"],
+  "date_range": {
+    "start": "2026-08-24T00:00:00Z",
+    "end": "2026-08-24T23:59:59Z"
+  },
+  "evidence_query": "authorization payment failure processor response"
+}
+```
+
+**Outcome:**
+
+```json
+{
+  "result": "success",
+  "case_id": "CASE-10001",
+  "evidence_count": 6,
+  "evidence_items": [
+    "AUTHORIZATION_RECORD",
+    "PROCESSOR_RESPONSE",
+    "PAYMENT_TIMELINE",
+    "LEDGER_ENTRY",
+    "MERCHANT_ORDER",
+    "CUSTOMER_PAYMENT_STATUS"
+  ],
+  "evidence_completeness": 0.95,
+  "missing_evidence": []
+}
+```
+
+---
+
+# Goal 4: Recommend the correct resolution path
+
+## Task 4.1: Apply policies and generate resolution
+
+**Tools required:**
+
+### Policy and rules engine
+
+**Tool description:** Evaluates payment, refund, dispute, risk, compliance, approval, SLA, and escalation policies deterministically.
+
+**Parameters:**
+
+```json
+{
+  "case_classification": {
+    "issue_type": "DUPLICATE_DEBIT",
+    "payment_rail": "UPI",
+    "lifecycle_stage": "POSTED"
+  },
+  "payment_rail": "UPI",
+  "amount": 2500.00,
+  "currency": "INR",
+  "reason_code": "DUPLICATE_POSTING",
+  "risk_signals": {
+    "fraud_score": 0.12
+  },
+  "customer_or_merchant_segment": "STANDARD",
+  "evidence_state": {
+    "ledger_verified": true,
+    "processor_verified": true
+  },
+  "deadlines": {
+    "resolution_deadline": "2026-08-26T23:59:59Z"
+  },
+  "policy_version": "PAYMENT-POLICY-V3"
+}
+```
+
+**Outcome:**
+
+```json
+{
+  "result": "success",
+  "allowed_actions": [
+    "VERIFY_DUPLICATE_POSTING",
+    "INITIATE_REFUND"
+  ],
+  "recommended_action": "INITIATE_REFUND",
+  "approval_required": true,
+  "escalation_required": false,
+  "sla_target": "48_HOURS",
+  "policy_reference": "PAYMENT-POLICY-V3",
+  "policy_rationale": "Verified duplicate debit requires customer refund"
+}
+```
+
+---
+
+# Goal 5: Draft appropriate customer and merchant communications
+
+## Task 5.1: Generate and validate communication
+
+**Tools required:**
+
+### Case-management and workflow system
+
+**Tool description:** Creates, assigns, prioritizes, updates, escalates, and closes operational cases while managing tasks, approvals, owners, and workflow status.
+
+**Parameters:**
+
+```json
+{
+  "case_summary": "Verified duplicate UPI debit",
+  "classification": {
+    "issue_type": "DUPLICATE_DEBIT",
+    "payment_rail": "UPI"
+  },
+  "evidence_links": ["EVID-1001", "EVID-1002"],
+  "recommendation": {
+    "action": "INITIATE_REFUND"
+  },
+  "priority": "HIGH",
+  "sla": {
+    "deadline": "2026-08-26T23:59:59Z"
+  },
+  "queue": "PAYMENTS_OPERATIONS",
+  "owner": null,
+  "approval_state": "PENDING",
+  "communication_drafts": []
+}
+```
+
+### Notification and communication service
+
+**Tool description:** Delivers approved customer, merchant, processor, and internal operations communications through supported channels.
+
+**Parameters:**
+
+```json
+{
+  "recipient": "customer_reference:CUST-1001",
+  "channel": "EMAIL",
+  "approved_message": "We identified a duplicate debit associated with your payment and are processing the appropriate refund.",
+  "case_or_transaction_references": [
+    "CASE-10001",
+    "TXN-10001"
+  ],
+  "language": "en-IN",
+  "timing": "IMMEDIATE",
+  "template_identifier": "DUPLICATE_DEBIT_REFUND"
+}
+```
+
+**Outcome:**
+
+```json
+{
+  "result": "success",
+  "communication_status": "APPROVED",
+  "recipient_type": "CUSTOMER",
+  "template": "DUPLICATE_DEBIT_REFUND",
+  "message_id": "MSG-50001",
+  "case_id": "CASE-10001",
+  "delivery_status": "SENT",
+  "unsupported_claims": false
+}
+```
+
+---
+
+# Goal 6: Route high-risk, high-value, or sensitive cases
+
+## Task 6.1: Identify and route cases requiring human review
+
+**Tools required:**
+
+### Risk, fraud, and identity signals
+
+**Tool description:** Provides fraud indicators, account risk, identity verification status, velocity patterns, and behavioral context.
+
+**Parameters:**
+
+```json
+{
+  "customer_reference": "CUST-1001",
+  "merchant_reference": "MER-1001",
+  "device_reference": "DEV-5001",
+  "transaction_reference": "TXN-10001",
+  "account_reference": "ACC-10001",
+  "ip_reference": "IP-5001",
+  "payment_instrument_reference": "PII-5001",
+  "historical_activity_references": ["TXN-9901", "TXN-9902"]
+}
+```
+
+### Policy and rules engine
+
+**Tool description:** Evaluates payment, refund, dispute, risk, compliance, approval, SLA, and escalation policies deterministically.
+
+**Parameters:**
+
+```json
+{
+  "case_classification": {
+    "issue_type": "DUPLICATE_DEBIT",
+    "payment_rail": "UPI"
+  },
+  "payment_rail": "UPI",
+  "amount": 2500.00,
+  "currency": "INR",
+  "reason_code": "DUPLICATE_POSTING",
+  "risk_signals": {
+    "fraud_score": 0.12
+  },
+  "customer_or_merchant_segment": "STANDARD",
+  "evidence_state": {
+    "ledger_verified": true
+  },
+  "deadlines": {},
+  "policy_version": "RISK-POLICY-V4"
+}
+```
+
+### Case-management and workflow system
+
+**Tool description:** Creates, assigns, prioritizes, updates, escalates, and closes operational cases while managing tasks, approvals, owners, and workflow status.
+
+**Parameters:**
+
+```json
+{
+  "case_summary": "Duplicate debit with policy review requirement",
+  "classification": {
+    "issue_type": "DUPLICATE_DEBIT",
+    "risk_level": "MEDIUM"
+  },
+  "evidence_links": ["EVID-1001"],
+  "recommendation": {
+    "action": "REVIEW_REFUND"
+  },
+  "priority": "HIGH",
+  "sla": {
+    "deadline": "2026-08-26T23:59:59Z"
+  },
+  "queue": "PAYMENTS_OPERATIONS",
+  "owner": null,
+  "approval_state": "PENDING",
+  "communication_drafts": []
+}
+```
+
+**Outcome:**
+
+```json
+{
+  "result": "success",
+  "risk_level": "MEDIUM",
+  "human_review_required": true,
+  "escalation_queue": "PAYMENTS_OPERATIONS",
+  "priority": "HIGH",
+  "sla_deadline": "2026-08-26T23:59:59Z",
+  "approval_required": true
+}
+```
+
+---
+
+# Goal 7: Reduce manual effort and improve resolution speed
+
+## Task 7.1: Execute approved low-risk actions
+
+**Tools required:**
+
+### Payment processor, bank, and payment-rail APIs
+
+**Tool description:** Connects to card, UPI, ACH, wire, bank, and processor systems to retrieve payment statuses, responses, authorization details, refunds, disputes, and settlement information, and execute authorized payment actions.
+
+**Parameters:**
+
+```json
+{
+  "transaction_ids": ["TXN-10001"],
+  "authorization_references": [],
+  "payment_rail": "UPI",
+  "date_range": {
+    "start": "2026-08-24T00:00:00Z",
+    "end": "2026-08-24T23:59:59Z"
+  },
+  "amount": 2500.00,
+  "merchant_id": "MER-1001",
+  "dispute_id": null,
+  "refund_id": "REF-70001",
+  "action_request": "CONFIRM_REFUND"
+}
+```
+
+### Refund and payout management system
+
+**Tool description:** Manages refund and payout requests, approvals, execution, reversals, failures, and customer or merchant payout status.
+
+**Parameters:**
+
+```json
+{
+  "original_transaction_id": "TXN-10001",
+  "refund_id": "REF-70001",
+  "amount": 2500.00,
+  "currency": "INR",
+  "reason": "DUPLICATE_DEBIT",
+  "approval": "APPROVED",
+  "destination_account_details": {}
+}
+```
+
+**Outcome:**
+
+```json
+{
+  "result": "success",
+  "action": "CONFIRM_REFUND",
+  "refund_id": "REF-70001",
+  "refund_status": "PROCESSING",
+  "processor_reference": "PROC-80001",
+  "amount": 2500.00,
+  "currency": "INR",
+  "execution_timestamp": "2026-08-24T18:45:00Z"
+}
+```
+
+---
+
+# Goal 8: Predict dispute likelihood and identify recurring failure patterns
+
+## Task 8.1: Estimate dispute likelihood
+
+**Tools required:**
+
+### Analytics and machine-learning service
+
+**Tool description:** Analyzes recurring exception patterns and optionally estimates dispute likelihood and control effectiveness.
+
+**Parameters:**
+
+```json
+{
+  "historical_case_outcomes": [
+    "CHARGEBACK_WON",
+    "CHARGEBACK_LOST",
+    "NO_DISPUTE"
+  ],
+  "transaction_features": [
+    "transaction_amount",
+    "payment_rail",
+    "merchant_category",
+    "transaction_age",
+    "refund_status"
+  ],
+  "processor_responses": [
+    "APPROVED"
+  ],
+  "merchant_attributes": {
+    "merchant_id": "MER-1001",
+    "chargeback_rate": 0.018
+  },
+  "customer_impact": {
+    "refund_pending": true
+  },
+  "evidence_features": {
+    "evidence_completeness": 0.82
+  },
+  "preventive_control_outcomes": []
+}
+```
+
+**Outcome:**
+
+```json
+{
+  "result": "success",
+  "prediction_type": "DISPUTE_LIKELIHOOD",
+  "dispute_likelihood": 0.34,
+  "confidence": 0.87,
+  "contributing_factors": [
+    "REFUND_PENDING",
+    "HIGH_TRANSACTION_AGE",
+    "INCOMPLETE_EVIDENCE"
+  ],
+  "prediction_usage": "ADVISORY_ONLY"
+}
+```
+
+---
+
+## Standard format to use for the remaining tasks
+
+For consistency, every task should follow exactly this structure:
+
+````text
+## Task X.X: <Task name>
+
+**Tools required:**
+
+### <Tool Name>
+
+**Tool description:** <The tool's one fixed/canonical description.>
+
+**Parameters:**
+
+```json
+{
+  "<fixed parameter 1>": "<value>",
+  "<fixed parameter 2>": "<value>"
+}
+````
+
+### <Another Tool Name>
+
+**Tool description:** <The same canonical description used everywhere else for this tool.>
+
+**Parameters:**
+
+```json
+{
+  "<fixed parameter 1>": "<value>",
+  "<fixed parameter 2>": "<value>"
+}
+```
+
+**Outcome:**
+
+```json
+{
+  "result": "success",
+  "<task-specific result key>": "<result value>",
+  "<additional result key>": "<result value>"
+}
+```
+
+```
+
+### Key rule
+
+**Tool description and parameter schema are properties of the tool, not of the task.** Therefore:
+
+- The **Payment processor** tool always has the same description and the same 9 parameters.
+- The **Ledger** tool always has the same description and the same 8 parameters.
+- The **Policy engine** always has the same description and the same 10 parameters.
+- Only the **values** of those parameters change from task to task.
+- The **Outcome JSON** can vary by task because it represents the result of that particular operation.
+- When one tool invokes another tool, the second tool receives its **own predefined parameter schema**, rather than inheriting or redefining parameters from the calling tool.
+```
+
+show me which goals are connected.

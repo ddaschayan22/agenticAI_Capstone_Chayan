@@ -1,0 +1,900 @@
+Yes. For the above requirement, I would structure the **multi-agent environment** around **3 AI agents + supporting services**. The key objective is to make each agent independently configurable while keeping memory, Jira, retrieval, and orchestration as deterministic application components.
+
+# Multi-Agent Environment Plan
+
+## 1. Target Environment
+
+```text
+                           ┌───────────────────┐
+                           │     End User      │
+                           └─────────┬─────────┘
+                                     │
+                                     ▼
+                         ┌──────────────────────┐
+                         │   Agent Orchestrator │
+                         │   / Workflow Engine  │
+                         └──────────┬───────────┘
+                                    │
+                                    ▼
+                     ┌────────────────────────────┐
+                     │   Ticket Planning Agent    │
+                     │                            │
+                     │ Strong Reasoning Model     │
+                     └─────────────┬──────────────┘
+                                   │
+                              Execution Plan
+                                   │
+                                   ▼
+                     ┌────────────────────────────┐
+                     │    Short-Term Memory      │
+                     │       Current Run         │
+                     └─────────────┬──────────────┘
+                                   │
+                                   ▼
+                     ┌────────────────────────────┐
+                     │   Ticket Execution Agent   │
+                     │                            │
+                     │ Cost-efficient Model       │
+                     └─────────────┬──────────────┘
+                                   │
+                  ┌────────────────┼────────────────┐
+                  │                │                │
+                  ▼                ▼                ▼
+           Retrieval Service  Working Memory  Long-Term Memory
+                  │                │                │
+                  └────────────────┼────────────────┘
+                                   │
+                                   ▼
+                           Actionable Finding?
+                                   │
+                              ┌────┴────┐
+                              │         │
+                             No        Yes
+                              │         │
+                              │         ▼
+                              │ ┌──────────────────────┐
+                              │ │  Jira Action Agent   │
+                              │ │                      │
+                              │ │ Lightweight Model    │
+                              │ └──────────┬───────────┘
+                              │            │
+                              │            ▼
+                              │ ┌──────────────────────┐
+                              │ │    Jira API Client   │
+                              │ │      API Token       │
+                              │ └──────────┬───────────┘
+                              │            │
+                              │            ▼
+                              │          Jira
+                              │
+                              └───────────────┐
+                                              │
+                                              ▼
+                                  Long-Term Memory
+                                              │
+                                              ▼
+                                      Final Response
+```
+
+---
+
+# 2. Agent Environment
+
+## Agent 1 — Ticket Planning Agent
+
+### Purpose
+
+Responsible for turning a complex customer/support question into a structured execution plan.
+
+### Model
+
+**Strongest reasoning model**
+
+### Inputs
+
+```text
+User question
+Relevant conversation context
+Available data/tool descriptions
+```
+
+### Outputs
+
+Structured plan:
+
+```text
+{
+  "plan_id": "PLAN-001",
+  "steps": [
+    {
+      "step_id": "STEP-001",
+      "description": "Analyze ticket IT-001",
+      "depends_on": []
+    },
+    {
+      "step_id": "STEP-002",
+      "description": "Find similar historical tickets",
+      "depends_on": ["STEP-001"]
+    },
+    {
+      "step_id": "STEP-003",
+      "description": "Identify associated customers",
+      "depends_on": ["STEP-002"]
+    },
+    {
+      "step_id": "STEP-004",
+      "description": "Check subsequent churn",
+      "depends_on": ["STEP-003"]
+    },
+    {
+      "step_id": "STEP-005",
+      "description": "Check whether findings were previously actioned",
+      "depends_on": ["STEP-004"]
+    },
+    {
+      "step_id": "STEP-006",
+      "description": "Create or update Jira if required",
+      "depends_on": ["STEP-005"]
+    }
+  ]
+}
+```
+
+### Tools
+
+The Planning Agent should have **minimal tools**.
+
+Preferably:
+
+* Schema/tool catalog
+* Dataset schema
+* No direct Jira access
+
+---
+
+# 3. Agent 2 — Ticket Execution Agent
+
+## Purpose
+
+The Execution Agent is the **workhorse** of the system.
+
+It executes one plan step at a time.
+
+### Model
+
+**Smaller, cheaper, high-throughput model**
+
+This agent may execute 5–10+ steps for one complex question, so using the most expensive reasoning model here would be unnecessary.
+
+### Responsibilities
+
+* Execute plan steps.
+* Retrieve ticket information.
+* Search historical tickets.
+* Compare ticket similarity.
+* Identify customers.
+* Follow relationships between records.
+* Evaluate relevance.
+* Retry failed retrievals.
+* Identify missing information.
+* Identify actionable findings.
+* Request Jira action when required.
+* Update Short-Term Memory.
+* Use Working Memory.
+* Query Long-Term Memory.
+
+### Tools
+
+```text
+Ticket Search
+Ticket Retrieval
+Customer Search
+Customer History
+Churn/Customer Status
+Long-Term Memory
+Jira Action Agent
+```
+
+The Executor should **not directly contain Jira implementation logic**.
+
+---
+
+# 4. Agent 3 — Jira Action Agent
+
+## Purpose
+
+Handle the business decision and structured preparation for Jira actions.
+
+### Model
+
+**Lightweight model**
+
+The task is primarily structured:
+
+```text
+Finding
+   ↓
+Issue category
+   ↓
+Summary
+   ↓
+Description
+   ↓
+Priority
+   ↓
+Labels
+   ↓
+Create / Update
+```
+
+### Responsibilities
+
+* Determine whether the finding warrants a Jira action.
+* Determine create vs update.
+* Generate Jira fields.
+* Search existing Jira issues when necessary.
+* Create Jira issue.
+* Update Jira issue.
+* Return structured result.
+
+### Example
+
+Input:
+
+```text
+Customer: CUST-114
+
+Finding:
+Customer had a login issue similar to IT-001
+and subsequently churned.
+
+Status:
+New finding
+```
+
+Output:
+
+```text
+Action: CREATE
+
+Project: SUPPORT
+Issue Type: Task
+Summary: CUST-114 churned following login issue
+Priority: High
+
+Labels:
+login
+authentication
+churn-risk
+follow-up
+```
+
+---
+
+# 5. Agent Environment Configuration
+
+Each agent should have its **own configuration**.
+
+```text
+agents/
+│
+├── ticket_planning_agent/
+│   ├── prompt
+│   ├── model_config
+│   ├── input_schema
+│   └── output_schema
+│
+├── ticket_execution_agent/
+│   ├── prompt
+│   ├── model_config
+│   ├── input_schema
+│   ├── output_schema
+│   ├── retry_config
+│   └── tool_config
+│
+└── jira_action_agent/
+    ├── prompt
+    ├── model_config
+    ├── input_schema
+    └── output_schema
+```
+
+This allows:
+
+```text
+Ticket Planning Agent → Model A
+Ticket Execution Agent → Model B
+Jira Action Agent → Model C
+```
+
+without changing application architecture.
+
+---
+
+# 6. Memory Environment
+
+Memory should be implemented as **three independent stores/services**.
+
+## A. Short-Term Memory
+
+### Scope
+
+One user query/run.
+
+```text
+RUN-001
+│
+├── User Question
+├── Plan
+├── Current Step
+├── Completed Steps
+├── Step Results
+├── Current Findings
+└── Jira Actions
+```
+
+### Lifetime
+
+```text
+Start Query
+     ↓
+Create
+     ↓
+Use throughout execution
+     ↓
+Final Response
+     ↓
+Clear
+```
+
+---
+
+# 7. Working Memory
+
+Working Memory belongs to **one execution step only**.
+
+```text
+STEP-004
+│
+├── Partial Retrieval 1
+├── Partial Retrieval 2
+├── Relevance Results
+├── Retry #1
+├── Retry #2
+└── Intermediate Result
+```
+
+When Step 4 completes:
+
+```text
+Working Memory
+      ↓
+Final Step Result
+      ↓
+Short-Term Memory
+      ↓
+CLEAR
+```
+
+Then Step 5 gets a new Working Memory context.
+
+This separation should be enforced programmatically.
+
+---
+
+# 8. Long-Term Memory
+
+Long-Term Memory survives across sessions.
+
+Example:
+
+```text
+Customer: CUST-114
+
+Finding:
+Login issue similar to IT-001 followed by churn.
+
+First Identified:
+2026-08-27
+
+Status:
+Actioned
+
+Jira:
+SUP-2045
+
+Action:
+Created
+
+Source Tickets:
+IT-001
+IT-014
+```
+
+Later:
+
+```text
+New Session
+     ↓
+Question about CUST-114
+     ↓
+Long-Term Memory Search
+     ↓
+Finding Found
+     ↓
+Previously Actioned
+     ↓
+No Duplicate Jira
+```
+
+---
+
+# 9. Retrieval Environment
+
+Create a dedicated **Ticket Retrieval Service** rather than another AI agent.
+
+It should support operations such as:
+
+```text
+get_ticket(ticket_id)
+
+search_tickets(category)
+
+search_similar_tickets(issue_description)
+
+get_customer(customer_id)
+
+get_customer_tickets(customer_id)
+
+get_customer_status(customer_id)
+
+get_churn_history(customer_id)
+```
+
+The Executor calls these services.
+
+Example:
+
+```text
+Ticket Execution Agent
+          │
+          ▼
+Ticket Retrieval Service
+          │
+          ▼
+Historical Ticket Data
+```
+
+---
+
+# 10. Jira Environment
+
+The Jira layer should be independent of the agents.
+
+```text
+Jira Action Agent
+       │
+       ▼
+Jira Service
+       │
+       ▼
+Jira API Client
+       │
+       ▼
+Jira API
+       │
+       ▼
+Jira Project
+```
+
+### Jira Service operations
+
+```text
+search_issue()
+search_by_customer()
+search_by_category()
+create_issue()
+update_issue()
+get_issue()
+```
+
+The Jira API token should be stored securely in the environment/secret manager and **never inside prompts or agent memory**.
+
+---
+
+# 11. Orchestrator Environment
+
+The **Agent Orchestrator** is not an AI agent.
+
+It is the deterministic controller responsible for:
+
+* Starting a run.
+* Calling the Planning Agent.
+* Managing plan steps.
+* Initializing/clearing Working Memory.
+* Updating Short-Term Memory.
+* Calling the Execution Agent.
+* Calling the Jira Action Agent when requested.
+* Persisting Long-Term Memory.
+* Handling failures.
+* Producing execution traces.
+
+Conceptually:
+
+```text
+Orchestrator
+     │
+     ├── Planning Agent
+     │
+     ├── Short-Term Memory
+     │
+     ├── Execution Agent
+     │       │
+     │       ├── Retrieval Service
+     │       ├── Working Memory
+     │       └── Long-Term Memory
+     │
+     ├── Jira Action Agent
+     │       │
+     │       └── Jira API
+     │
+     └── Long-Term Memory
+```
+
+---
+
+# 12. Complete Runtime Execution
+
+For the question:
+
+> "Which customers had the same login issue as IT-001, and did any of them churn afterward?"
+
+The environment executes:
+
+### Phase 1 — Planning
+
+```text
+User
+ ↓
+Ticket Planning Agent
+ ↓
+PLAN-001
+```
+
+### Phase 2 — Initialize run
+
+```text
+PLAN-001
+ ↓
+Short-Term Memory
+ ↓
+RUN-001
+```
+
+### Phase 3 — Execute Step 1
+
+```text
+Executor
+ ↓
+Working Memory
+ ↓
+Retrieve IT-001
+ ↓
+Identify login issue
+ ↓
+Step complete
+ ↓
+Short-Term Memory
+ ↓
+Clear Working Memory
+```
+
+### Phase 4 — Execute Step 2
+
+```text
+Executor
+ ↓
+New Working Memory
+ ↓
+Search similar tickets
+ ↓
+IT-014 identified
+ ↓
+Clear Working Memory
+```
+
+### Phase 5 — Execute Step 3
+
+```text
+Executor
+ ↓
+Identify customer
+ ↓
+CUST-114
+```
+
+### Phase 6 — Execute Step 4
+
+```text
+Executor
+ ↓
+Customer history
+ ↓
+CUST-114 churn status
+ ↓
+Churn confirmed
+```
+
+### Phase 7 — Memory check
+
+```text
+CUST-114 + Login + Churn
+             │
+             ▼
+      Long-Term Memory
+             │
+        ┌────┴────┐
+        │         │
+      Found      Not Found
+        │         │
+        ▼         ▼
+    Existing     New
+```
+
+### Phase 8 — Jira action
+
+For a new finding:
+
+```text
+Executor
+   ↓
+Jira Action Agent
+   ↓
+Prepare Jira fields
+   ↓
+Jira API Client
+   ↓
+Jira
+   ↓
+SUP-2045
+```
+
+### Phase 9 — Persist
+
+```text
+Finding + Jira SUP-2045
+          ↓
+   Long-Term Memory
+```
+
+### Phase 10 — Final response
+
+The user receives:
+
+```text
+Fresh Finding:
+CUST-114 subsequently churned.
+
+Action:
+Jira SUP-2045 created.
+
+Memory:
+No previous record of this finding was found.
+```
+
+---
+
+# 13. Multi-Agent Environment — Recommended Components
+
+| Component                  | Type                      | Purpose                                      |
+| -------------------------- | ------------------------- | -------------------------------------------- |
+| **Ticket Planning Agent**  | AI Agent                  | Compound-question decomposition              |
+| **Ticket Execution Agent** | AI Agent                  | Step execution and reasoning                 |
+| **Jira Action Agent**      | AI Agent                  | Jira decision and structured ticket creation |
+| Agent Orchestrator         | Application Service       | Controls workflow                            |
+| Short-Term Memory          | Memory Service            | Current run                                  |
+| Working Memory             | Memory Service            | Current step                                 |
+| Long-Term Memory           | Persistent Memory Service | Cross-session knowledge                      |
+| Ticket Retrieval Service   | Application Service       | Historical ticket/customer retrieval         |
+| Jira Service               | Application Service       | Jira operations                              |
+| Jira API Client            | Integration               | Jira communication                           |
+| Execution Trace Service    | Application Service       | Observability                                |
+
+---
+
+# 14. Environment Separation
+
+For a realistic implementation, use three environments:
+
+```text
+                ┌─────────────────┐
+                │   Development   │
+                └─────────────────┘
+                         │
+                         ▼
+                ┌─────────────────┐
+                │      QA/Test    │
+                └─────────────────┘
+                         │
+                         ▼
+                ┌─────────────────┐
+                │    Production   │
+                └─────────────────┘
+```
+
+### Development
+
+Use:
+
+* Synthetic 60-ticket dataset.
+* Test Jira project.
+* Test API token.
+* Development memory store.
+* Lower-cost models where possible.
+
+### QA/Test
+
+Use:
+
+* Full 60-ticket dataset.
+* Dedicated Jira test project.
+* Dedicated memory database.
+* Automated three acceptance scenarios.
+* Execution trace validation.
+
+### Production
+
+Use:
+
+* Real ticket/customer data.
+* Production Jira project.
+* Production secrets.
+* Production persistent memory.
+* Production model configuration.
+
+---
+
+# 15. Model Configuration
+
+I recommend making the configuration look conceptually like this:
+
+```text
+agents:
+
+  ticket_planning_agent:
+    model: strongest_reasoning_model
+    temperature: low
+    max_retries: 2
+
+  ticket_execution_agent:
+    model: cost_optimized_model
+    temperature: low
+    max_retries: 3
+
+  jira_action_agent:
+    model: lightweight_model
+    temperature: low
+    max_retries: 2
+```
+
+The important architectural principle is:
+
+> **Model selection belongs to the agent configuration, not the overall application configuration.**
+
+So later you can do:
+
+```text
+Planner       → Model X
+Executor      → Model Y
+Jira Agent    → Model Z
+```
+
+and change only one of them.
+
+---
+
+# 16. Execution Trace
+
+For every request, generate a trace such as:
+
+```text
+================================================
+RUN: RUN-2026-001
+================================================
+
+USER QUESTION
+Which customers had the same login issue as IT-001,
+and did any of them churn afterward?
+
+------------------------------------------------
+PLANNER
+------------------------------------------------
+Model: Strong Reasoning Model
+
+PLAN:
+1. Analyze IT-001
+2. Find similar tickets
+3. Identify customers
+4. Check churn
+5. Check historical memory
+6. Take Jira action if required
+
+------------------------------------------------
+EXECUTOR
+------------------------------------------------
+
+STEP 1
+Status: SUCCESS
+Result: Login/authentication failure
+
+STEP 2
+Status: SUCCESS
+Result: IT-014 identified as highly similar
+
+STEP 3
+Status: SUCCESS
+Result: CUST-114
+
+STEP 4
+Status: SUCCESS
+Result: Customer churn confirmed
+
+------------------------------------------------
+LONG-TERM MEMORY
+------------------------------------------------
+
+Finding: NOT FOUND
+Classification: NEW FINDING
+
+------------------------------------------------
+JIRA ACTION AGENT
+------------------------------------------------
+
+Action: CREATE
+Customer: CUST-114
+Category: IT / Login
+Priority: HIGH
+Labels: login, authentication, churn-risk
+
+------------------------------------------------
+JIRA
+------------------------------------------------
+
+Issue Created: SUP-2045
+
+------------------------------------------------
+LONG-TERM MEMORY
+------------------------------------------------
+
+Finding persisted: YES
+Jira ID persisted: SUP-2045
+
+================================================
+FINAL RESULT
+================================================
+```
+
+This trace is particularly valuable for demonstrating that the system is genuinely **multi-agent and memory-aware**, rather than simply producing a final LLM response.
+
+---
+
+# 17. Final Recommended Architecture
+
+I would therefore define the solution as:
+
+### **3 AI Agents**
+
+1. **Ticket Planning Agent**
+2. **Ticket Execution Agent**
+3. **Jira Action Agent**
+
+### **6 Supporting Services**
+
+1. **Agent Orchestrator**
+2. **Short-Term Memory Service**
+3. **Working Memory Service**
+4. **Long-Term Memory Service**
+5. **Ticket Retrieval Service**
+6. **Jira API Service**
+
+This is a realistic balance between **multi-agent architecture and engineering simplicity**. You get genuine agent specialization, independent model selection, multi-hop execution, Jira actions, three distinct memory layers, deduplication, and strong observability without turning every application component into an "agent."

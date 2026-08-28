@@ -1,0 +1,1249 @@
+============================================================
+TICKET INTELLIGENCE SYSTEM
+HISTORICAL TICKET DATASET - 60 TICKETS
+============================================================
+
+Format:
+Ticket ID
+Customer ID
+Customer Name
+Category
+Issue Type
+Summary
+Description
+Priority
+Status
+Created Date
+Resolved Date
+Assigned Team
+Resolution
+Customer Impact
+Churn Risk
+Churned
+Tags
+Related Tickets
+============================================================
+
+
+############################
+# IT ISSUES - 15 TICKETS
+############################
+
+TICKET ID: IT-001
+Customer ID: CUST-101
+Customer Name: Acme Retail
+Category: IT
+Issue Type: Login Failure
+Summary: Customer unable to log in after password reset
+Description: Customer reports that the application rejects valid credentials after completing a password reset. The issue occurs on both Chrome and Edge. Authentication logs show repeated failed login attempts despite the password being successfully reset.
+Priority: High
+Status: Resolved
+Created Date: 2025-01-08
+Resolved Date: 2025-01-09
+Assigned Team: IT Support
+Resolution: Authentication cache was cleared and the customer's login session was reset.
+Customer Impact: Customer users were unable to access the application for approximately six hours.
+Churn Risk: Medium
+Churned: No
+Tags: login, authentication, password-reset, access
+Related Tickets: IT-014, IT-017
+
+
+TICKET ID: IT-002
+Customer ID: CUST-102
+Customer Name: BrightMart
+Category: IT
+Issue Type: SSO Failure
+Summary: SSO authentication failing for multiple users
+Description: Several users cannot access the platform through the company's SSO provider. Direct username/password authentication continues to work.
+Priority: High
+Status: Resolved
+Created Date: 2025-01-15
+Resolved Date: 2025-01-16
+Assigned Team: IT Support
+Resolution: SAML configuration was corrected and the identity provider metadata was refreshed.
+Customer Impact: Approximately 25 employees could not access the platform.
+Churn Risk: Medium
+Churned: No
+Tags: sso, saml, authentication, identity
+Related Tickets: IT-015
+
+
+TICKET ID: IT-003
+Customer ID: CUST-103
+Customer Name: Northstar Logistics
+Category: IT
+Issue Type: Password Reset
+Summary: Password reset email not received
+Description: User requested multiple password resets but did not receive the reset email. Other transactional emails from the platform are being received normally.
+Priority: Medium
+Status: Resolved
+Created Date: 2025-02-03
+Resolved Date: 2025-02-03
+Assigned Team: IT Support
+Resolution: Customer domain had incorrectly configured email filtering. Customer added the reset-email sender to the allowlist.
+Customer Impact: Two users temporarily lost access.
+Churn Risk: Low
+Churned: No
+Tags: password-reset, email, access
+Related Tickets: None
+
+
+TICKET ID: IT-004
+Customer ID: CUST-104
+Customer Name: Global Foods
+Category: IT
+Issue Type: MFA Failure
+Summary: MFA code rejected during login
+Description: Customer reports that valid MFA codes are rejected consistently. The issue started after the customer changed mobile devices.
+Priority: High
+Status: Resolved
+Created Date: 2025-02-10
+Resolved Date: 2025-02-11
+Assigned Team: IT Support
+Resolution: MFA device registration was reset and the new device was enrolled.
+Customer Impact: Three administrators were unable to access the administrative console.
+Churn Risk: Medium
+Churned: No
+Tags: mfa, authentication, mobile, access
+Related Tickets: None
+
+
+TICKET ID: IT-005
+Customer ID: CUST-105
+Customer Name: Urban Supplies
+Category: IT
+Issue Type: API Timeout
+Summary: API requests timing out intermittently
+Description: Customer reports intermittent API timeouts during high-volume order processing. Requests normally complete within two seconds but occasionally exceed the configured timeout.
+Priority: High
+Status: Resolved
+Created Date: 2025-02-19
+Resolved Date: 2025-02-21
+Assigned Team: Engineering Support
+Resolution: API rate-limiting configuration was adjusted and database connection pooling was optimized.
+Customer Impact: Approximately 8% of API requests failed during peak periods.
+Churn Risk: Medium
+Churned: No
+Tags: api, timeout, performance, integration
+Related Tickets: None
+
+
+TICKET ID: IT-006
+Customer ID: CUST-106
+Customer Name: Delta Manufacturing
+Category: IT
+Issue Type: API Authentication
+Summary: API credentials rejected after key rotation
+Description: Customer rotated their API credentials and all subsequent requests returned authentication errors. The old key had been revoked successfully.
+Priority: Medium
+Status: Resolved
+Created Date: 2025-03-02
+Resolved Date: 2025-03-02
+Assigned Team: Engineering Support
+Resolution: Customer configuration was updated with the new API key.
+Customer Impact: Automated integrations stopped for approximately three hours.
+Churn Risk: Low
+Churned: No
+Tags: api, authentication, credentials, integration
+Related Tickets: None
+
+
+TICKET ID: IT-007
+Customer ID: CUST-107
+Customer Name: Prime Healthcare
+Category: IT
+Issue Type: Integration Failure
+Summary: CRM integration stopped synchronizing customer records
+Description: Customer reports that new CRM records are no longer appearing in the platform. Existing records remain available.
+Priority: High
+Status: Resolved
+Created Date: 2025-03-11
+Resolved Date: 2025-03-13
+Assigned Team: Integrations
+Resolution: Integration token permissions were corrected and synchronization was restarted.
+Customer Impact: Approximately 1,200 customer records were delayed.
+Churn Risk: Medium
+Churned: No
+Tags: integration, crm, synchronization
+Related Tickets: None
+
+
+TICKET ID: IT-008
+Customer ID: CUST-108
+Customer Name: Greenfield Energy
+Category: IT
+Issue Type: Dashboard Outage
+Summary: Analytics dashboard unavailable
+Description: Customer administrators receive a blank page when opening the analytics dashboard. Other application modules are functioning normally.
+Priority: High
+Status: Resolved
+Created Date: 2025-03-18
+Resolved Date: 2025-03-18
+Assigned Team: Engineering
+Resolution: A failed deployment was rolled back.
+Customer Impact: Reporting was unavailable for approximately two hours.
+Churn Risk: Low
+Churned: No
+Tags: dashboard, outage, analytics
+Related Tickets: None
+
+
+TICKET ID: IT-009
+Customer ID: CUST-109
+Customer Name: Metro Distribution
+Category: IT
+Issue Type: Mobile Crash
+Summary: Mobile application crashes when opening order history
+Description: Android users report that the application closes immediately when they open order history. iOS users are unaffected.
+Priority: Medium
+Status: Resolved
+Created Date: 2025-04-04
+Resolved Date: 2025-04-06
+Assigned Team: Mobile Engineering
+Resolution: Mobile application version 6.4.2 was released with a fix for the crash.
+Customer Impact: Android users could not review historical orders.
+Churn Risk: Low
+Churned: No
+Tags: mobile, android, crash, order-history
+Related Tickets: None
+
+
+TICKET ID: IT-010
+Customer ID: CUST-110
+Customer Name: Silverline Services
+Category: IT
+Issue Type: Email Notification
+Summary: Users not receiving case update notifications
+Description: Customer reports that case status changes are not generating email notifications. Notification settings appear enabled.
+Priority: Medium
+Status: Resolved
+Created Date: 2025-04-12
+Resolved Date: 2025-04-14
+Assigned Team: IT Support
+Resolution: Notification queue processing was restarted and failed messages were replayed.
+Customer Impact: Support staff missed several case updates.
+Churn Risk: Low
+Churned: No
+Tags: email, notification, queue
+Related Tickets: None
+
+
+TICKET ID: IT-011
+Customer ID: CUST-111
+Customer Name: Apex Electronics
+Category: IT
+Issue Type: Data Synchronization
+Summary: Product data synchronization delayed
+Description: Product updates made in the customer's ERP system are taking several hours to appear in the platform.
+Priority: Medium
+Status: Resolved
+Created Date: 2025-04-22
+Resolved Date: 2025-04-23
+Assigned Team: Integrations
+Resolution: Background synchronization workers were restarted and queue processing was optimized.
+Customer Impact: Product information was temporarily outdated.
+Churn Risk: Low
+Churned: No
+Tags: synchronization, erp, data
+Related Tickets: None
+
+
+TICKET ID: IT-012
+Customer ID: CUST-112
+Customer Name: Oceanic Traders
+Category: IT
+Issue Type: Performance
+Summary: Application becomes slow during afternoon peak
+Description: Customer reports response times increasing significantly between 2 PM and 5 PM every business day.
+Priority: Medium
+Status: Resolved
+Created Date: 2025-05-05
+Resolved Date: 2025-05-08
+Assigned Team: Engineering
+Resolution: Database indexes were optimized and additional application capacity was added.
+Customer Impact: Users experienced response times of 10-15 seconds.
+Churn Risk: Medium
+Churned: No
+Tags: performance, latency, database
+Related Tickets: None
+
+
+TICKET ID: IT-013
+Customer ID: CUST-113
+Customer Name: Summit Travel
+Category: IT
+Issue Type: Account Access
+Summary: Administrator account locked after repeated login attempts
+Description: Customer administrator account became locked after several failed authentication attempts. Customer confirmed the attempts were legitimate.
+Priority: Medium
+Status: Resolved
+Created Date: 2025-05-14
+Resolved Date: 2025-05-14
+Assigned Team: IT Support
+Resolution: Account lockout was cleared and login activity was reviewed.
+Customer Impact: One administrator temporarily lost access.
+Churn Risk: Low
+Churned: No
+Tags: account, lockout, authentication
+Related Tickets: IT-001
+
+
+TICKET ID: IT-014
+Customer ID: CUST-114
+Customer Name: Harbor Wholesale
+Category: IT
+Issue Type: Login Failure
+Summary: Login rejected despite correct password
+Description: Customer users report that login fails with an invalid credentials message even when the password is known to be correct. Password resets do not resolve the issue. The behavior is similar to a previously observed authentication issue.
+Priority: High
+Status: Resolved
+Created Date: 2025-05-22
+Resolved Date: 2025-05-23
+Assigned Team: IT Support
+Resolution: Stale authentication sessions were invalidated and the authentication service cache was refreshed.
+Customer Impact: Five users were unable to access the application.
+Churn Risk: High
+Churned: No
+Tags: login, authentication, access, password
+Related Tickets: IT-001
+
+
+TICKET ID: IT-015
+Customer ID: CUST-115
+Customer Name: Westbridge Consulting
+Category: IT
+Issue Type: SSO Failure
+Summary: Users unable to authenticate through corporate SSO
+Description: Customer reports that SSO authentication fails for all users while direct login continues to work. Error occurs immediately after identity-provider authentication.
+Priority: High
+Status: Resolved
+Created Date: 2025-06-03
+Resolved Date: 2025-06-04
+Assigned Team: IT Support
+Resolution: SAML certificate configuration was corrected.
+Customer Impact: Approximately 40 employees could not access the platform.
+Churn Risk: Medium
+Churned: No
+Tags: sso, saml, authentication
+Related Tickets: IT-002
+
+
+
+############################
+# CUSTOMER ISSUES - 15 TICKETS
+############################
+
+TICKET ID: CUST-016
+Customer ID: CUST-101
+Customer Name: Acme Retail
+Category: Customer
+Issue Type: Onboarding
+Summary: Customer unhappy with onboarding process
+Description: Customer reports that onboarding documentation was difficult to follow and several configuration steps required multiple support interactions.
+Priority: Medium
+Status: Resolved
+Created Date: 2025-01-20
+Resolved Date: 2025-01-24
+Assigned Team: Customer Success
+Resolution: Customer Success provided a guided onboarding session and configuration checklist.
+Customer Impact: Customer delayed production launch by four days.
+Churn Risk: Medium
+Churned: No
+Tags: onboarding, customer-experience, support
+Related Tickets: None
+
+
+TICKET ID: CUST-017
+Customer ID: CUST-102
+Customer Name: BrightMart
+Category: Customer
+Issue Type: Support Delay
+Summary: Customer complaint about delayed support responses
+Description: Customer reports that responses to high-priority support requests are taking more than 24 hours.
+Priority: High
+Status: Resolved
+Created Date: 2025-02-01
+Resolved Date: 2025-02-05
+Assigned Team: Customer Success
+Resolution: Account was moved to a dedicated support queue.
+Customer Impact: Customer experienced delays resolving operational questions.
+Churn Risk: Medium
+Churned: No
+Tags: support, response-time, escalation
+Related Tickets: None
+
+
+TICKET ID: CUST-018
+Customer ID: CUST-103
+Customer Name: Northstar Logistics
+Category: Customer
+Issue Type: Account Configuration
+Summary: Customer requests changes to account configuration
+Description: Customer wants several account-level settings changed but is unsure which settings are supported.
+Priority: Low
+Status: Resolved
+Created Date: 2025-02-12
+Resolved Date: 2025-02-13
+Assigned Team: Customer Success
+Resolution: Customer Success reviewed available settings and completed the requested configuration.
+Customer Impact: Minor operational inconvenience.
+Churn Risk: Low
+Churned: No
+Tags: configuration, account, customer-success
+Related Tickets: None
+
+
+TICKET ID: CUST-019
+Customer ID: CUST-116
+Customer Name: BluePeak Foods
+Category: Customer
+Issue Type: Feature Request
+Summary: Customer requests bulk export functionality
+Description: Customer currently exports records individually and requests a bulk export option to reduce manual work.
+Priority: Medium
+Status: Open
+Created Date: 2025-02-20
+Resolved Date: N/A
+Assigned Team: Product Support
+Resolution: Feature request recorded for product review.
+Customer Impact: Significant manual effort for monthly reporting.
+Churn Risk: Medium
+Churned: No
+Tags: feature-request, export, reporting
+Related Tickets: None
+
+
+TICKET ID: CUST-020
+Customer ID: CUST-117
+Customer Name: Redstone Construction
+Category: Customer
+Issue Type: Data Correction
+Summary: Incorrect customer contact information displayed
+Description: Customer notices outdated contact information in several account records.
+Priority: Low
+Status: Resolved
+Created Date: 2025-03-01
+Resolved Date: 2025-03-03
+Assigned Team: Customer Success
+Resolution: Records were corrected after customer provided updated information.
+Customer Impact: Low.
+Churn Risk: Low
+Churned: No
+Tags: data, customer-profile, correction
+Related Tickets: None
+
+
+TICKET ID: CUST-021
+Customer ID: CUST-118
+Customer Name: Eastland Pharma
+Category: Customer
+Issue Type: Service Complaint
+Summary: Customer dissatisfied with overall service quality
+Description: Customer reports repeated minor issues over the previous two months and feels that the support experience has deteriorated.
+Priority: High
+Status: Resolved
+Created Date: 2025-03-10
+Resolved Date: 2025-03-18
+Assigned Team: Customer Success
+Resolution: Executive customer review was conducted and an improvement plan was agreed.
+Customer Impact: Reduced confidence in the service.
+Churn Risk: High
+Churned: No
+Tags: dissatisfaction, escalation, customer-success
+Related Tickets: CUST-027
+
+
+TICKET ID: CUST-022
+Customer ID: CUST-119
+Customer Name: Lakeside Hotels
+Category: Customer
+Issue Type: Customer Escalation
+Summary: Customer escalates unresolved operational issues
+Description: Customer has raised multiple support requests and is requesting management involvement because several issues remained unresolved for more than one week.
+Priority: High
+Status: Resolved
+Created Date: 2025-03-19
+Resolved Date: 2025-03-25
+Assigned Team: Customer Success
+Resolution: Account was assigned a senior customer success manager and outstanding issues were closed.
+Customer Impact: Significant frustration and operational delays.
+Churn Risk: High
+Churned: No
+Tags: escalation, support, customer-success
+Related Tickets: None
+
+
+TICKET ID: CUST-023
+Customer ID: CUST-120
+Customer Name: Vertex Media
+Category: Customer
+Issue Type: Cancellation Request
+Summary: Customer requests subscription cancellation
+Description: Customer indicates that the platform no longer fits its current operational requirements and requests cancellation at the end of the billing period.
+Priority: High
+Status: Closed
+Created Date: 2025-04-02
+Resolved Date: 2025-04-30
+Assigned Team: Customer Success
+Resolution: Cancellation completed at the end of the contract period.
+Customer Impact: Customer relationship ended.
+Churn Risk: High
+Churned: Yes
+Tags: cancellation, churn, subscription
+Related Tickets: None
+
+
+TICKET ID: CUST-024
+Customer ID: CUST-121
+Customer Name: Falcon Automotive
+Category: Customer
+Issue Type: Usability
+Summary: Customer reports difficulty navigating reporting features
+Description: Users state that reporting workflows require too many steps and are difficult for new employees to learn.
+Priority: Medium
+Status: Resolved
+Created Date: 2025-04-09
+Resolved Date: 2025-04-12
+Assigned Team: Customer Success
+Resolution: Training session provided and product feedback submitted.
+Customer Impact: Increased training time.
+Churn Risk: Low
+Churned: No
+Tags: usability, reporting, training
+Related Tickets: None
+
+
+TICKET ID: CUST-025
+Customer ID: CUST-122
+Customer Name: Greenway Retail
+Category: Customer
+Issue Type: Account Manager Complaint
+Summary: Customer requests a different account manager
+Description: Customer reports dissatisfaction with communication style and requests reassignment to another account manager.
+Priority: Medium
+Status: Resolved
+Created Date: 2025-04-17
+Resolved Date: 2025-04-20
+Assigned Team: Customer Success
+Resolution: Account manager was changed.
+Customer Impact: Relationship friction.
+Churn Risk: Medium
+Churned: No
+Tags: account-manager, complaint, relationship
+Related Tickets: None
+
+
+TICKET ID: CUST-026
+Customer ID: CUST-123
+Customer Name: Pacific Imports
+Category: Customer
+Issue Type: Repeated Support Issue
+Summary: Customer reports recurring problems with case handling
+Description: Customer has opened several support tickets for similar operational problems and feels previous resolutions were temporary.
+Priority: High
+Status: In Progress
+Created Date: 2025-05-02
+Resolved Date: N/A
+Assigned Team: Customer Success
+Resolution: Root-cause review initiated.
+Customer Impact: Repeated operational disruption.
+Churn Risk: High
+Churned: No
+Tags: recurring, support, escalation, churn-risk
+Related Tickets: None
+
+
+TICKET ID: CUST-027
+Customer ID: CUST-118
+Customer Name: Eastland Pharma
+Category: Customer
+Issue Type: Customer Dissatisfaction
+Summary: Customer considering alternative platform
+Description: Customer states that continued service problems are causing them to evaluate competing vendors. Management requested immediate follow-up.
+Priority: Critical
+Status: Resolved
+Created Date: 2025-05-10
+Resolved Date: 2025-05-15
+Assigned Team: Customer Success
+Resolution: Executive escalation completed and retention plan established.
+Customer Impact: High risk of customer loss.
+Churn Risk: High
+Churned: No
+Tags: dissatisfaction, churn-risk, retention
+Related Tickets: CUST-021
+
+
+TICKET ID: CUST-028
+Customer ID: CUST-124
+Customer Name: Sunrise Textiles
+Category: Customer
+Issue Type: Feature Escalation
+Summary: Customer escalates missing workflow feature
+Description: Customer requires an approval workflow that is not currently available and indicates that the limitation affects internal processes.
+Priority: High
+Status: Open
+Created Date: 2025-05-21
+Resolved Date: N/A
+Assigned Team: Product Support
+Resolution: Product escalation created.
+Customer Impact: Customer has developed a manual workaround.
+Churn Risk: Medium
+Churned: No
+Tags: feature, escalation, workflow
+Related Tickets: None
+
+
+TICKET ID: CUST-029
+Customer ID: CUST-125
+Customer Name: Citywide Services
+Category: Customer
+Issue Type: Service Outage Complaint
+Summary: Customer complains about repeated service disruptions
+Description: Customer experienced multiple service interruptions over the previous quarter and requests a formal reliability review.
+Priority: High
+Status: Resolved
+Created Date: 2025-06-01
+Resolved Date: 2025-06-06
+Assigned Team: Customer Success
+Resolution: Reliability review completed and service-credit discussion initiated.
+Customer Impact: Multiple operational interruptions.
+Churn Risk: High
+Churned: No
+Tags: outage, reliability, complaint, escalation
+Related Tickets: None
+
+
+TICKET ID: CUST-030
+Customer ID: CUST-126
+Customer Name: Mountain Telecom
+Category: Customer
+Issue Type: Churn Risk
+Summary: Customer indicates intent to leave after unresolved issues
+Description: Customer reports that several unresolved issues have caused loss of confidence and asks for options to terminate the relationship.
+Priority: Critical
+Status: Closed
+Created Date: 2025-06-15
+Resolved Date: 2025-07-15
+Assigned Team: Customer Success
+Resolution: Retention plan unsuccessful. Customer terminated the subscription.
+Customer Impact: Customer relationship ended.
+Churn Risk: High
+Churned: Yes
+Tags: churn, churn-risk, cancellation, escalation
+Related Tickets: CUST-029
+
+
+
+############################
+# LEGAL ISSUES - 15 TICKETS
+############################
+
+TICKET ID: LEGAL-031
+Customer ID: CUST-127
+Customer Name: Sterling Finance
+Category: Legal
+Issue Type: Contract Review
+Summary: Customer requests contract review before renewal
+Description: Customer's legal team requests clarification of several clauses before approving the annual renewal.
+Priority: Medium
+Status: Resolved
+Created Date: 2025-01-12
+Resolved Date: 2025-01-20
+Assigned Team: Legal
+Resolution: Legal team reviewed the agreement and provided clarification.
+Customer Impact: Renewal approval delayed by one week.
+Churn Risk: Low
+Churned: No
+Tags: contract, renewal, legal-review
+Related Tickets: None
+
+
+TICKET ID: LEGAL-032
+Customer ID: CUST-128
+Customer Name: Orion Manufacturing
+Category: Legal
+Issue Type: Contract Dispute
+Summary: Customer disputes early termination clause
+Description: Customer believes the contract permits termination without the fee specified in the agreement.
+Priority: High
+Status: Resolved
+Created Date: 2025-01-25
+Resolved Date: 2025-02-05
+Assigned Team: Legal
+Resolution: Contract interpretation was provided and both parties agreed on the applicable termination terms.
+Customer Impact: Potential contract dispute.
+Churn Risk: Medium
+Churned: No
+Tags: contract, dispute, termination
+Related Tickets: None
+
+
+TICKET ID: LEGAL-033
+Customer ID: CUST-129
+Customer Name: Clearview Analytics
+Category: Legal
+Issue Type: GDPR Request
+Summary: Customer requests deletion of personal data
+Description: Customer submits a data deletion request covering several user accounts.
+Priority: High
+Status: Resolved
+Created Date: 2025-02-08
+Resolved Date: 2025-02-12
+Assigned Team: Privacy Legal
+Resolution: Data deletion request was validated and completed.
+Customer Impact: Personal data processing request.
+Churn Risk: Low
+Churned: No
+Tags: gdpr, privacy, deletion, data
+Related Tickets: None
+
+
+TICKET ID: LEGAL-034
+Customer ID: CUST-130
+Customer Name: Atlas Retail
+Category: Legal
+Issue Type: Data Retention
+Summary: Customer asks how long customer records are retained
+Description: Customer legal team requests information about retention periods for account and transaction records.
+Priority: Medium
+Status: Resolved
+Created Date: 2025-02-17
+Resolved Date: 2025-02-19
+Assigned Team: Privacy Legal
+Resolution: Retention policy documentation was provided.
+Customer Impact: Compliance clarification required.
+Churn Risk: Low
+Churned: No
+Tags: retention, privacy, compliance
+Related Tickets: None
+
+
+TICKET ID: LEGAL-035
+Customer ID: CUST-131
+Customer Name: MedCore Systems
+Category: Legal
+Issue Type: Privacy Complaint
+Summary: Customer raises concern about user data processing
+Description: Customer questions whether certain user profile fields are necessary for service delivery.
+Priority: High
+Status: Resolved
+Created Date: 2025-03-04
+Resolved Date: 2025-03-10
+Assigned Team: Privacy Legal
+Resolution: Data processing practices were reviewed and additional documentation was provided.
+Customer Impact: Customer requested additional privacy assurance.
+Churn Risk: Medium
+Churned: No
+Tags: privacy, data-processing, compliance
+Related Tickets: None
+
+
+TICKET ID: LEGAL-036
+Customer ID: CUST-132
+Customer Name: IronWorks Ltd
+Category: Legal
+Issue Type: Compliance Documentation
+Summary: Customer requests compliance certificates
+Description: Customer procurement team requires current security and compliance documentation before renewing the contract.
+Priority: Medium
+Status: Resolved
+Created Date: 2025-03-15
+Resolved Date: 2025-03-17
+Assigned Team: Legal
+Resolution: Required compliance documentation was provided.
+Customer Impact: Renewal process temporarily delayed.
+Churn Risk: Low
+Churned: No
+Tags: compliance, documentation, renewal
+Related Tickets: None
+
+
+TICKET ID: LEGAL-037
+Customer ID: CUST-133
+Customer Name: Nova Chemicals
+Category: Legal
+Issue Type: Terms Violation
+Summary: Customer requests clarification regarding terms-of-service violation
+Description: Customer received a notification regarding suspected prohibited use and requested clarification of the applicable terms.
+Priority: High
+Status: Resolved
+Created Date: 2025-03-23
+Resolved Date: 2025-03-28
+Assigned Team: Legal
+Resolution: Legal team reviewed usage and determined that the activity did not violate the relevant terms.
+Customer Impact: Potential service restriction.
+Churn Risk: Medium
+Churned: No
+Tags: terms, compliance, violation
+Related Tickets: None
+
+
+TICKET ID: LEGAL-038
+Customer ID: CUST-134
+Customer Name: Royal Foods
+Category: Legal
+Issue Type: Contract Renewal
+Summary: Customer requests changes to renewal agreement
+Description: Customer requests modifications to several commercial and liability clauses before renewal.
+Priority: High
+Status: Resolved
+Created Date: 2025-04-01
+Resolved Date: 2025-04-15
+Assigned Team: Legal
+Resolution: Contract amendments were negotiated and approved.
+Customer Impact: Renewal delayed.
+Churn Risk: Medium
+Churned: No
+Tags: contract, renewal, negotiation
+Related Tickets: None
+
+
+TICKET ID: LEGAL-039
+Customer ID: CUST-135
+Customer Name: Vertex Engineering
+Category: Legal
+Issue Type: NDA
+Summary: Customer requests updated NDA
+Description: Customer's legal department requires an updated NDA before sharing proprietary technical information.
+Priority: Medium
+Status: Resolved
+Created Date: 2025-04-11
+Resolved Date: 2025-04-16
+Assigned Team: Legal
+Resolution: Updated NDA was reviewed and executed.
+Customer Impact: Project start delayed slightly.
+Churn Risk: Low
+Churned: No
+Tags: nda, contract, legal
+Related Tickets: None
+
+
+TICKET ID: LEGAL-040
+Customer ID: CUST-136
+Customer Name: Global Logistics
+Category: Legal
+Issue Type: Data Processing Agreement
+Summary: Customer requests DPA for European operations
+Description: Customer requires a signed data processing agreement before enabling the platform for its European subsidiary.
+Priority: High
+Status: Resolved
+Created Date: 2025-04-25
+Resolved Date: 2025-05-05
+Assigned Team: Privacy Legal
+Resolution: DPA was reviewed and signed.
+Customer Impact: European deployment delayed.
+Churn Risk: Low
+Churned: No
+Tags: dpa, gdpr, privacy, contract
+Related Tickets: None
+
+
+TICKET ID: LEGAL-041
+Customer ID: CUST-137
+Customer Name: Horizon Telecom
+Category: Legal
+Issue Type: Regulatory Inquiry
+Summary: Customer requests information for regulatory audit
+Description: Customer needs documentation describing data processing controls for an external regulatory audit.
+Priority: High
+Status: Resolved
+Created Date: 2025-05-03
+Resolved Date: 2025-05-12
+Assigned Team: Legal
+Resolution: Required documentation and compliance responses were provided.
+Customer Impact: Audit preparation depended on the information.
+Churn Risk: Low
+Churned: No
+Tags: regulatory, audit, compliance
+Related Tickets: None
+
+
+TICKET ID: LEGAL-042
+Customer ID: CUST-138
+Customer Name: FreshFields Agriculture
+Category: Legal
+Issue Type: Customer Consent
+Summary: Customer asks how user consent is recorded
+Description: Customer legal team requests details on how consent records are captured and maintained.
+Priority: Medium
+Status: Resolved
+Created Date: 2025-05-16
+Resolved Date: 2025-05-19
+Assigned Team: Privacy Legal
+Resolution: Consent management documentation was provided.
+Customer Impact: Compliance review delayed deployment.
+Churn Risk: Low
+Churned: No
+Tags: consent, privacy, compliance
+Related Tickets: None
+
+
+TICKET ID: LEGAL-043
+Customer ID: CUST-139
+Customer Name: Creative Labs
+Category: Legal
+Issue Type: Intellectual Property
+Summary: Customer raises concern about ownership of generated content
+Description: Customer requests clarification regarding ownership and permitted use of content generated through the platform.
+Priority: High
+Status: Resolved
+Created Date: 2025-05-25
+Resolved Date: 2025-06-02
+Assigned Team: Legal
+Resolution: Legal guidance and contract documentation were provided.
+Customer Impact: Customer temporarily paused a planned workflow.
+Churn Risk: Medium
+Churned: No
+Tags: intellectual-property, content, contract
+Related Tickets: None
+
+
+TICKET ID: LEGAL-044
+Customer ID: CUST-140
+Customer Name: CityBank Services
+Category: Legal
+Issue Type: Legal Escalation
+Summary: Customer escalates unresolved contractual concern
+Description: Customer's legal department escalates an unresolved disagreement regarding contractual obligations and requests executive review.
+Priority: Critical
+Status: Resolved
+Created Date: 2025-06-04
+Resolved Date: 2025-06-18
+Assigned Team: Legal
+Resolution: Executive legal review completed and contractual interpretation agreed.
+Customer Impact: Renewal was at risk.
+Churn Risk: High
+Churned: No
+Tags: legal-escalation, contract, renewal, churn-risk
+Related Tickets: None
+
+
+TICKET ID: LEGAL-045
+Customer ID: CUST-141
+Customer Name: SecureData Corp
+Category: Legal
+Issue Type: Compliance Escalation
+Summary: Customer threatens contract termination over compliance concern
+Description: Customer states that an unresolved compliance concern could result in contract termination if evidence is not provided.
+Priority: Critical
+Status: Closed
+Created Date: 2025-06-20
+Resolved Date: 2025-07-10
+Assigned Team: Legal
+Resolution: Compliance evidence was provided, but the customer terminated the relationship due to broader concerns.
+Customer Impact: Customer relationship ended.
+Churn Risk: High
+Churned: Yes
+Tags: compliance, escalation, churn, legal
+Related Tickets: None
+
+
+
+############################
+# PAYMENT ISSUES - 15 TICKETS
+############################
+
+TICKET ID: PAY-046
+Customer ID: CUST-142
+Customer Name: Alpine Stores
+Category: Payment
+Issue Type: Payment Failure
+Summary: Monthly subscription payment failed
+Description: Customer's recurring payment failed even though the payment method had been successfully used during previous billing cycles.
+Priority: High
+Status: Resolved
+Created Date: 2025-01-18
+Resolved Date: 2025-01-19
+Assigned Team: Finance Support
+Resolution: Customer updated payment information and the invoice was successfully collected.
+Customer Impact: Account entered temporary payment retry status.
+Churn Risk: Low
+Churned: No
+Tags: payment, failed-payment, subscription
+Related Tickets: None
+
+
+TICKET ID: PAY-047
+Customer ID: CUST-143
+Customer Name: BlueRiver Trading
+Category: Payment
+Issue Type: Credit Card Decline
+Summary: Credit card declined during subscription renewal
+Description: Customer's renewal payment was declined by the card issuer.
+Priority: Medium
+Status: Resolved
+Created Date: 2025-01-29
+Resolved Date: 2025-01-30
+Assigned Team: Finance Support
+Resolution: Customer contacted the card issuer and retried the payment successfully.
+Customer Impact: Renewal temporarily delayed.
+Churn Risk: Low
+Churned: No
+Tags: credit-card, payment, renewal
+Related Tickets: None
+
+
+TICKET ID: PAY-048
+Customer ID: CUST-144
+Customer Name: Rapid Distribution
+Category: Payment
+Issue Type: Duplicate Charge
+Summary: Customer reports duplicate subscription charge
+Description: Customer's account appears to have been charged twice for the same monthly subscription.
+Priority: High
+Status: Resolved
+Created Date: 2025-02-06
+Resolved Date: 2025-02-08
+Assigned Team: Finance Support
+Resolution: Duplicate transaction was confirmed and one charge was refunded.
+Customer Impact: Customer temporarily lost access to the duplicated funds.
+Churn Risk: Medium
+Churned: No
+Tags: duplicate-charge, refund, billing
+Related Tickets: None
+
+
+TICKET ID: PAY-049
+Customer ID: CUST-145
+Customer Name: Prime Textiles
+Category: Payment
+Issue Type: Invoice Mismatch
+Summary: Invoice amount does not match contract
+Description: Customer states that the latest invoice is higher than the amount specified in their contract.
+Priority: High
+Status: Resolved
+Created Date: 2025-02-14
+Resolved Date: 2025-02-18
+Assigned Team: Finance Support
+Resolution: Incorrect billing configuration was corrected and a revised invoice was issued.
+Customer Impact: Payment approval was delayed.
+Churn Risk: Medium
+Churned: No
+Tags: invoice, billing, contract
+Related Tickets: None
+
+
+TICKET ID: PAY-050
+Customer ID: CUST-146
+Customer Name: OceanView Hotels
+Category: Payment
+Issue Type: Refund Request
+Summary: Customer requests refund for unused service
+Description: Customer requests a partial refund after reducing the number of active users during the billing period.
+Priority: Medium
+Status: Resolved
+Created Date: 2025-02-22
+Resolved Date: 2025-02-27
+Assigned Team: Finance Support
+Resolution: Partial refund was approved and processed.
+Customer Impact: Billing dispute temporarily delayed account reconciliation.
+Churn Risk: Low
+Churned: No
+Tags: refund, billing, subscription
+Related Tickets: None
+
+
+TICKET ID: PAY-051
+Customer ID: CUST-147
+Customer Name: Metro Foods
+Category: Payment
+Issue Type: Refund Delay
+Summary: Approved refund has not reached customer
+Description: Customer states that a previously approved refund has not appeared in the bank account after the expected processing period.
+Priority: Medium
+Status: Resolved
+Created Date: 2025-03-05
+Resolved Date: 2025-03-10
+Assigned Team: Finance Support
+Resolution: Payment processor confirmed the refund was completed.
+Customer Impact: Customer concerned about missing funds.
+Churn Risk: Medium
+Churned: No
+Tags: refund, payment, delay
+Related Tickets: None
+
+
+TICKET ID: PAY-052
+Customer ID: CUST-148
+Customer Name: Greenline Energy
+Category: Payment
+Issue Type: Subscription Billing
+Summary: Subscription upgraded but invoice still shows old plan
+Description: Customer upgraded their subscription but the next invoice still reflects the previous plan.
+Priority: High
+Status: Resolved
+Created Date: 2025-03-20
+Resolved Date: 2025-03-22
+Assigned Team: Finance Support
+Resolution: Billing plan synchronization was corrected and invoice regenerated.
+Customer Impact: Invoice approval delayed.
+Churn Risk: Low
+Churned: No
+Tags: subscription, billing, invoice
+Related Tickets: None
+
+
+TICKET ID: PAY-053
+Customer ID: CUST-149
+Customer Name: Harbor Medical
+Category: Payment
+Issue Type: Tax Error
+Summary: Incorrect tax amount applied to invoice
+Description: Customer reports that the tax amount on the invoice does not match the applicable tax jurisdiction.
+Priority: High
+Status: Resolved
+Created Date: 2025-04-03
+Resolved Date: 2025-04-07
+Assigned Team: Finance Support
+Resolution: Customer tax configuration was corrected and the invoice was reissued.
+Customer Impact: Payment approval was delayed.
+Churn Risk: Low
+Churned: No
+Tags: tax, invoice, billing
+Related Tickets: None
+
+
+TICKET ID: PAY-054
+Customer ID: CUST-150
+Customer Name: Summit Manufacturing
+Category: Payment
+Issue Type: Reconciliation
+Summary: Payment received but invoice remains unpaid
+Description: Customer confirms payment was completed, but the billing portal continues to show the invoice as outstanding.
+Priority: High
+Status: Resolved
+Created Date: 2025-04-18
+Resolved Date: 2025-04-19
+Assigned Team: Finance Support
+Resolution: Payment was manually reconciled against the outstanding invoice.
+Customer Impact: Account incorrectly appeared overdue.
+Churn Risk: Low
+Churned: No
+Tags: reconciliation, payment, invoice
+Related Tickets: None
+
+
+TICKET ID: PAY-055
+Customer ID: CUST-151
+Customer Name: West Coast Retail
+Category: Payment
+Issue Type: Failed Renewal
+Summary: Subscription renewal failed
+Description: Automatic renewal failed because the payment processor rejected the transaction.
+Priority: High
+Status: Resolved
+Created Date: 2025-04-29
+Resolved Date: 2025-05-01
+Assigned Team: Finance Support
+Resolution: Customer updated payment details and renewal was successfully processed.
+Customer Impact: Subscription was temporarily placed in renewal-pending status.
+Churn Risk: Medium
+Churned: No
+Tags: renewal, payment-failure, subscription
+Related Tickets: None
+
+
+TICKET ID: PAY-056
+Customer ID: CUST-152
+Customer Name: Global Imports
+Category: Payment
+Issue Type: Currency Conversion
+Summary: Customer disputes currency conversion amount
+Description: Customer's invoice is in USD while the customer's finance team expected billing in EUR and disputes the converted amount.
+Priority: Medium
+Status: Resolved
+Created Date: 2025-05-07
+Resolved Date: 2025-05-12
+Assigned Team: Finance Support
+Resolution: Billing currency configuration was reviewed and clarification provided.
+Customer Impact: Payment approval delayed.
+Churn Risk: Low
+Churned: No
+Tags: currency, invoice, billing
+Related Tickets: None
+
+
+TICKET ID: PAY-057
+Customer ID: CUST-153
+Customer Name: North Valley Services
+Category: Payment
+Issue Type: Missing Invoice
+Summary: Customer did not receive monthly invoice
+Description: Customer reports that the invoice email was not received even though the invoice is visible in the billing portal.
+Priority: Medium
+Status: Resolved
+Created Date: 2025-05-20
+Resolved Date: 2025-05-21
+Assigned Team: Finance Support
+Resolution: Invoice notification was resent and customer email settings were verified.
+Customer Impact: Payment processing delayed.
+Churn Risk: Low
+Churned: No
+Tags: invoice, email, billing
+Related Tickets: None
+
+
+TICKET ID: PAY-058
+Customer ID: CUST-154
+Customer Name: East Coast Electronics
+Category: Payment
+Issue Type: Overcharge
+Summary: Customer reports unexpected additional charge
+Description: Customer was charged an amount above the expected monthly subscription price and requests an explanation.
+Priority: High
+Status: Resolved
+Created Date: 2025-06-02
+Resolved Date: 2025-06-05
+Assigned Team: Finance Support
+Resolution: Additional usage charges were identified and explained to the customer.
+Customer Impact: Customer disputed the invoice.
+Churn Risk: Medium
+Churned: No
+Tags: overcharge, invoice, billing
+Related Tickets: None
+
+
+TICKET ID: PAY-059
+Customer ID: CUST-155
+Customer Name: CityTech Solutions
+Category: Payment
+Issue Type: Payment Method Update
+Summary: Customer unable to update payment method
+Description: Customer receives an error when attempting to replace an expired credit card with a new payment method.
+Priority: High
+Status: Resolved
+Created Date: 2025-06-11
+Resolved Date: 2025-06-12
+Assigned Team: Finance Support
+Resolution: Payment method was updated manually and the underlying validation issue was escalated to engineering.
+Customer Impact: Customer was at risk of payment failure.
+Churn Risk: Medium
+Churned: No
+Tags: payment-method, credit-card, billing
+Related Tickets: None
+
+
+TICKET ID: PAY-060
+Customer ID: CUST-156
+Customer Name: DigitalWorks
+Category: Payment
+Issue Type: Cancellation Billing
+Summary: Customer charged after subscription cancellation
+Description: Customer cancelled the subscription but received another recurring charge afterward. Customer requests reversal and confirmation that future billing has stopped.
+Priority: Critical
+Status: Closed
+Created Date: 2025-06-25
+Resolved Date: 2025-07-03
+Assigned Team: Finance Support
+Resolution: Incorrect recurring charge was refunded and the subscription was fully terminated.
+Customer Impact: Customer was charged after cancellation and expressed strong dissatisfaction.
+Churn Risk: High
+Churned: Yes
+Tags: cancellation, billing, refund, churn
+Related Tickets: None
+
+
+============================================================
+END OF DATASET
+============================================================
