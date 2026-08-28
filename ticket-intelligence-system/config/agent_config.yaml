@@ -1,0 +1,19 @@
+agents:
+  planner:
+    model: strong-reasoning-model
+    temperature: 0.0
+    max_tokens: 4000
+  executor:
+    model: cost-optimized-model
+    temperature: 0.0
+    max_tokens: 3000
+  jira_action:
+    model: lightweight-model
+    temperature: 0.0
+    max_tokens: 2000
+retry:
+  max_attempts: 3
+  backoff_seconds: [1, 2, 5]
+low_relevance_threshold: 0.5
+search_result_limit: 3
+create_ticket_confidence_threshold: 0.8
